@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cian"
+    android:background="@color/blue_500"
     tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/ivLogo"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="100dp"
         android:layout_marginStart="6dp"
         android:layout_marginEnd="6dp"
-        android:background="#ffffff"
-        android:src="@drawable/logo_p"
+        android:src="@drawable/botaomaior"
+        android:background="@color/blue_500"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -86,7 +86,7 @@
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="110dp"
         android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -97,7 +97,9 @@
         android:id="@+id/scroll"
         android:layout_width="match_parent"
         android:layout_height="200dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/view">
 
@@ -105,7 +107,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="24dp"
-            android:background="@color/cianRanking"
+            android:background="@color/blue_700"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/scroll">
@@ -188,6 +190,17 @@
                 app:layout_constraintTop_toTopOf="@id/avatarRankingTerceiro" />
 
             <ImageView
+                android:id="@+id/statusTerceiro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/status_on"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/avatarStatusOffTwo" />
+
+
+            <ImageView
                 android:id="@+id/avatarStatusOffTwo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -206,6 +219,16 @@
                 app:layout_constraintBottom_toBottomOf="@id/avatarStatusOffTwo"
                 app:layout_constraintEnd_toStartOf="@+id/avatarStatusOffTwo"
                 app:layout_constraintTop_toTopOf="@id/avatarStatusOffTwo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:gravity="center_horizontal"
+                android:text="500"
+                app:layout_constraintBottom_toBottomOf="@id/statusTerceiro"
+                app:layout_constraintTop_toTopOf="@id/statusTerceiro"
+                app:layout_constraintEnd_toStartOf="@id/statusTerceiro"/>
 
 
             <ImageView
@@ -233,13 +256,12 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 
-
     <Button
         android:id="@+id/play"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
-        android:backgroundTint="@color/purple"
+        android:backgroundTint="@color/orange_200"
         android:text="Jogar"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -146,12 +146,12 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <ImageView
-        android:id="@+id/ivRemove"
+        android:id="@+id/ivCancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginBottom="16dp"
-        android:src="@drawable/remove"
+        android:src="@drawable/ic_back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/confirmPasswordInputLayout" />
 
@@ -160,9 +160,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:src="@drawable/remove"
-        app:layout_constraintBottom_toBottomOf="@+id/ivRemove"
+        android:src="@drawable/ic_back"
+        app:layout_constraintBottom_toBottomOf="@+id/ivCancel"
         app:layout_constraintEnd_toEndOf="@+id/confirmPasswordInputLayout"
-        app:layout_constraintTop_toTopOf="@+id/ivRemove" />
+        app:layout_constraintTop_toTopOf="@+id/ivCancel" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

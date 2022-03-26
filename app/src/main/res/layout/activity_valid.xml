@@ -24,18 +24,20 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_marginTop="8dp"
-        android:src="@drawable/logo1"
+        android:src="@drawable/logo_novo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvCreateAccount" />
 
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Enviamos um link para o e-mail: %s"
-        android:textColor="@color/black"
+        android:gravity="center_horizontal"
+        android:text="Será enviado um código para o seu e-mail: %s"
+        android:textColor="@color/white"
         android:textSize="22sp"
         android:textStyle="bold"
         android:visibility="visible"
@@ -43,18 +45,34 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivLogo" />
 
+
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnRedefinir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:backgroundTint="@android:color/holo_orange_dark"
-        android:text="confirm"
+        android:text="ENVIAR"
         android:textAllCaps="true"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="283dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="60dp"
+        android:ems="10"
+        android:hint="Digite um email válido"
+        android:gravity="center_horizontal"
+        android:background="@color/white"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

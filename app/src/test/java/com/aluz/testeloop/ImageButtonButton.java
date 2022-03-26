@@ -1,2 +1,4 @@
-package com.aluz.testeloop;public class ImageButtonButton {
+package com.aluz.testeloop;
+
+public class ImageButtonButton {
 }

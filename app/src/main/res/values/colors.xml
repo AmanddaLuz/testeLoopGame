@@ -10,4 +10,27 @@
     <color name="black">#FF000000</color>
     <color name="purple">#8157CC</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="blue_500">#6EB5FF</color>-->
+    <color name="blue_700">#0966F1</color>
+    <color name="questions">#CCE7E1</color>
+    <color name="alternativas">#F0F8F9</color>
+    <color name="barra">#20EF06</color>
+    <color name="orange_200">#FF914D</color>
+
 </resources>
+
+
+
+    <!--    <?xml version="1.0" encoding="utf-8"?>-->
+    <!--<resources>-->
+    <!--<color name="purple_200">#FFBB86FC</color>-->
+    <!--<color name="blue_500">#6EB5FF</color>-->
+    <!--<color name="blue_700">#0966F1</color>-->
+    <!--<color name="orange_200">#FF914D</color>-->
+    <!--<color name="cian">#64E0E8</color>-->
+    <!--<color name="cianRanking">#338187</color>-->
+    <!--<color name="teal_700">#FF018786</color>-->
+    <!--<color name="black">#FF000000</color>-->
+    <!--<color name="purple_500">#8157CC</color>-->
+    <!--<color name="white">#FFFFFFFF</color>-->
+    <!--</resources>-->

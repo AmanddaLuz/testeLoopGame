@@ -4,6 +4,132 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".LoginActivity"
+    android:background="@color/blue_500">
+
+    <LinearLayout
+        android:id="@+id/viewlogin"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+
+
+        <ImageView
+            android:id="@+id/logoatual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/botaomaior"
+            app:layout_constraintEnd_toEndOf="@id/viewlogin"
+            app:layout_constraintStart_toStartOf="@id/viewlogin"
+            app:layout_constraintTop_toTopOf="@id/viewlogin" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/campoEnter"
+        android:layout_width="290dp"
+        android:layout_height="186dp"
+        android:layout_margin="64dp"
+        android:layout_marginTop="140dp"
+        android:background="@color/blue_500"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewlogin" />
+
+    <ImageView
+        android:id="@+id/avatarEnter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        app:srcCompat="@drawable/ic_avatar_ranking"
+        tools:layout_editor_absoluteX="48dp"
+        tools:layout_editor_absoluteY="244dp"
+        app:layout_constraintStart_toStartOf="@id/campoEnter"
+        app:layout_constraintTop_toTopOf="@id/campoEnter"/>
+
+    <TextView
+        android:id="@+id/nameEnter"
+        android:layout_width="146dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="64dp"
+        android:background="@color/white"
+        android:hint="Nome de usuário"
+        android:gravity="center_horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/avatarEnter"
+        app:layout_constraintStart_toEndOf="@id/avatarEnter"
+        app:layout_constraintTop_toTopOf="@id/avatarEnter" />
+
+    <ImageView
+        android:id="@+id/avatarLock"
+        android:layout_width="33dp"
+        android:layout_height="33dp"
+        android:layout_margin="32dp"
+        app:srcCompat="@drawable/ic_lock"
+        app:layout_constraintStart_toStartOf="@id/campoEnter"
+        app:layout_constraintTop_toBottomOf="@id/avatarEnter"/>
+
+    <TextView
+        android:id="@+id/passwordEnter"
+        android:layout_width="146dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="64dp"
+        android:background="@color/white"
+        android:hint="Senha"
+        android:gravity="center_horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/avatarLock"
+        app:layout_constraintStart_toEndOf="@id/avatarLock"
+        app:layout_constraintTop_toTopOf="@id/avatarLock" />
+
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="144dp"
+        android:backgroundTint="@color/orange_200"
+        android:gravity="center_horizontal"
+        android:text="LOGIN"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnCadastrar" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="35dp"
+        android:text="Lembrar minha senha"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.613"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/campoEnter" />
+
+    <TextView
+        android:id="@+id/tvForSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_marginTop="4dp"
+        android:text="Esqueci minha senha"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.425"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/checkBox" />
+
+    <Button
+        android:id="@+id/btnCadastrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="116dp"
+        android:backgroundTint="@android:color/transparent"
+        android:text="Cadastrar - se"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

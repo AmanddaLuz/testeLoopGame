@@ -9,19 +9,19 @@ import android.view.View;
 
 public class WelcomeActivity extends AppCompatActivity {
 
-    AppCompatButton BotaoStartTest;
+    AppCompatButton BotaoStartTestLevel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
 
-        BotaoStartTest = findViewById(R.id.btnRedefinir);
+        BotaoStartTestLevel = findViewById(R.id.btnStartTestLevel);
 
-        BotaoStartTest.setOnClickListener(new View.OnClickListener() {
+        BotaoStartTestLevel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent retornar = new Intent(getApplicationContext(),TesteNivelActivity.class);
+                Intent retornar = new Intent(getApplicationContext(),QuestionActivity.class);
                 startActivity(retornar);
             }
         });

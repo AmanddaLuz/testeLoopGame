@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_500"
+    tools:context=".ConfirmLogoutActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivLogoLogoutGame"
+            android:layout_width="wrap_content"
+            android:layout_height="104dp"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/botaomaior" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvQuitMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Tem certeza que deseja sair?"
+        android:textColor="@color/white"
+        android:textSize="32dp"
+        android:layout_marginTop="300dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout" />
+
+    <ImageView
+        android:id="@+id/ivCancelLogout"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginBottom="65dp"
+        android:src="@drawable/ic_cancel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ivConfirmLogout"
+        app:layout_constraintHorizontal_bias="0.018"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivConfirmLogout"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="60dp"
+        android:src="@drawable/ic_correct"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

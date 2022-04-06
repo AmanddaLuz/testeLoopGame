@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class TesteNivelActivity extends AppCompatActivity {
+public class TesteLevelActivity extends AppCompatActivity {
 
     Button BotaoProntoTest;
 
@@ -21,8 +21,9 @@ public class TesteNivelActivity extends AppCompatActivity {
         BotaoProntoTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent test = new Intent(getApplicationContext(), QuestionActivity.class);
-                startActivity(test);
+                Intent intent = new Intent(getApplicationContext(), QuestionActivity.class);
+                startActivity(intent);
+
             }
         });
     }

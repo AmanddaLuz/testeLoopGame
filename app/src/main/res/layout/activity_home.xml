@@ -7,14 +7,25 @@
     android:background="@color/blue_500"
     tools:context=".HomeActivity">
 
+    <ImageButton
+        android:id="@+id/imgButtonBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_back"
+        android:background="@color/blue_500"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.052"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/ivLogo"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="100dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginEnd="6dp"
-        android:src="@drawable/botaomaior"
+        android:layout_marginTop="28dp"
         android:background="@color/blue_500"
+        android:src="@drawable/botaomaior"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -30,7 +41,7 @@
         app:layout_constraintTop_toBottomOf="@id/ivLogo" />
 
     <TextView
-        android:id="@+id/tvName"
+        android:id="@+id/txvAvatarNameHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -45,13 +56,13 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
         android:src="@drawable/ic_crown"
-        app:layout_constraintBottom_toBottomOf="@id/tvPoints"
-        app:layout_constraintEnd_toStartOf="@id/tvPoints"
-        app:layout_constraintTop_toTopOf="@id/tvPoints" />
+        app:layout_constraintBottom_toBottomOf="@id/tvxUserPointsHome"
+        app:layout_constraintEnd_toStartOf="@id/tvxUserPointsHome"
+        app:layout_constraintTop_toTopOf="@id/tvxUserPointsHome" />
 
 
     <TextView
-        android:id="@+id/tvPoints"
+        android:id="@+id/tvxUserPointsHome"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -84,7 +95,7 @@
     <!--        app:layout_constraintTop_toBottomOf="@id/guidelineTop"/>-->
 
     <View
-        android:id="@+id/view"
+        android:id="@+id/vHintBar"
         android:layout_width="match_parent"
         android:layout_height="110dp"
         android:background="@color/white"
@@ -94,14 +105,14 @@
 
 
     <androidx.core.widget.NestedScrollView
-        android:id="@+id/scroll"
+        android:id="@+id/RankingScroll"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="64dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/view">
+        app:layout_constraintTop_toBottomOf="@id/vHintBar">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -110,11 +121,11 @@
             android:background="@color/blue_700"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/scroll">
+            app:layout_constraintTop_toBottomOf="@id/RankingScroll">
 
 
             <TextView
-                android:id="@+id/ranking"
+                android:id="@+id/tvRanking"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
@@ -126,144 +137,105 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
 
-            <ImageView
-                android:id="@+id/avatarRanking"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_margin="8dp"
-                android:src="@drawable/ic_avatar_ranking"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ranking" />
-
             <TextView
-                android:id="@+id/avatarName"
+                android:id="@+id/txvNameFirstPlayer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="48dp"
+                android:layout_marginEnd="150dp"
                 android:gravity="center_horizontal"
                 android:text="1º Jogador"
                 android:textSize="18dp"
-                app:layout_constraintBottom_toBottomOf="@id/avatarRanking"
-                app:layout_constraintStart_toEndOf="@id/avatarRanking"
-                app:layout_constraintTop_toTopOf="@id/avatarRanking" />
-
-            <ImageView
-                android:id="@+id/avatarStatus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="20dp"
-                android:src="@drawable/status_on"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ranking" />
+                app:layout_constraintEnd_toStartOf="@+id/txvPointsFirstPlayer"
+                app:layout_constraintHorizontal_bias="0.236"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvRanking" />
 
             <TextView
+                android:id="@+id/txvPointsFirstPlayer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="20dp"
+                android:layout_marginEnd="32dp"
                 android:gravity="center_horizontal"
                 android:text="1000"
-                app:layout_constraintBottom_toBottomOf="@id/avatarStatus"
-                app:layout_constraintEnd_toStartOf="@+id/avatarStatus"
-                app:layout_constraintTop_toTopOf="@id/avatarStatus" />
+                app:layout_constraintBottom_toBottomOf="@+id/txvNameFirstPlayer"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/txvNameFirstPlayer"
+                tools:layout_editor_absoluteX="306dp"
+                tools:layout_editor_absoluteY="49dp" />
 
-
-            <ImageView
-                android:id="@+id/avatarRankingTerceiro"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_margin="8dp"
-                android:src="@drawable/ic_avatar_ranking"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/avatarRankingSecond" />
 
             <TextView
-                android:id="@+id/avatarNameTerceiro"
+                android:id="@+id/txvNameThirdPlayer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="150dp"
                 android:gravity="center_horizontal"
                 android:text="3º Jogador"
                 android:textSize="18dp"
-                app:layout_constraintBottom_toBottomOf="@id/avatarRankingTerceiro"
-                app:layout_constraintStart_toEndOf="@id/avatarRankingTerceiro"
-                app:layout_constraintTop_toTopOf="@id/avatarRankingTerceiro" />
+                app:layout_constraintEnd_toStartOf="@+id/tvPointsThirdPlayer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txvNameSecondPlayer"
+                tools:layout_editor_absoluteX="78dp"
+                tools:layout_editor_absoluteY="167dp" />
 
-            <ImageView
-                android:id="@+id/statusTerceiro"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:layout_marginEnd="20dp"
-                android:src="@drawable/status_on"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/avatarStatusOffTwo" />
-
-
-            <ImageView
-                android:id="@+id/avatarStatusOffTwo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:layout_marginEnd="20dp"
-                android:src="@drawable/status_off"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/avatarStatus" />
 
             <TextView
+                android:id="@+id/txvPointsSecondPlayer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="20dp"
+                android:layout_marginEnd="32dp"
                 android:gravity="center_horizontal"
                 android:text="800"
-                app:layout_constraintBottom_toBottomOf="@id/avatarStatusOffTwo"
-                app:layout_constraintEnd_toStartOf="@+id/avatarStatusOffTwo"
-                app:layout_constraintTop_toTopOf="@id/avatarStatusOffTwo" />
+                app:layout_constraintBottom_toBottomOf="@+id/txvNameSecondPlayer"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/txvNameSecondPlayer"
+                tools:layout_editor_absoluteX="313dp"
+                tools:layout_editor_absoluteY="110dp" />
 
             <TextView
+                android:id="@+id/tvPointsThirdPlayer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="20dp"
+                android:layout_marginEnd="32dp"
                 android:gravity="center_horizontal"
                 android:text="500"
-                app:layout_constraintBottom_toBottomOf="@id/statusTerceiro"
-                app:layout_constraintTop_toTopOf="@id/statusTerceiro"
-                app:layout_constraintEnd_toStartOf="@id/statusTerceiro"/>
+                app:layout_constraintBottom_toBottomOf="@+id/txvNameThirdPlayer"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/txvNameThirdPlayer"
+                tools:layout_editor_absoluteX="314dp"
+                tools:layout_editor_absoluteY="171dp" />
 
-
-            <ImageView
-                android:id="@+id/avatarRankingSecond"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_margin="8dp"
-                android:src="@drawable/ic_avatar_ranking"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/avatarRanking" />
 
             <TextView
-                android:id="@+id/avatarNameSecond"
+                android:id="@+id/txvNameSecondPlayer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="150dp"
                 android:gravity="center_horizontal"
                 android:text="2º Jogador"
                 android:textSize="18dp"
-                app:layout_constraintBottom_toBottomOf="@id/avatarRankingSecond"
-                app:layout_constraintStart_toEndOf="@id/avatarRankingSecond"
-                app:layout_constraintTop_toTopOf="@id/avatarRankingSecond" />
+                app:layout_constraintEnd_toStartOf="@+id/txvPointsSecondPlayer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txvNameFirstPlayer"
+                tools:layout_editor_absoluteX="78dp"
+                tools:layout_editor_absoluteY="110dp" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 
     <Button
-        android:id="@+id/play"
+        android:id="@+id/btnStartPlay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="32dp"
         android:backgroundTint="@color/orange_200"
         android:text="Jogar"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -273,53 +245,34 @@
         android:id="@+id/bar"
         android:layout_width="409dp"
         android:layout_height="123dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/vHintBar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="543dp">
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="65dp"
-            android:layout_height="match_parent"
-            android:layout_margin="4dp"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/ic_avatar" />
-
-        <ImageView
-            android:id="@+id/imageView2"
+        <TextView
+            android:id="@+id/txvHintsHome"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_margin="4dp"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/ic_avatar_ranking" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="16dp"
+            android:text="Dicas: "
+            android:textColor="@color/orange_200"
+            android:textSize="32dp" />
 
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_margin="4dp"
+        <TextView
+            android:id="@+id/txvtime"
+            android:layout_width="75dp"
+            android:layout_height="32dp"
+            android:layout_margin="16dp"
             android:layout_weight="1"
-            app:srcCompat="@drawable/ic_crown" />
+            android:visibility="invisible"
+            android:gravity="center_vertical"
+            android:text="Tempo"
+            android:textColor="@color/orange_200"
+            android:textSize="16dp" />
 
-
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_margin="4dp"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/status_off" />
-
-        <ImageView
-            android:id="@+id/imageView6"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_margin="4dp"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/status_on" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

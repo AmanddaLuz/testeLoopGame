@@ -10,7 +10,40 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TesteLoop">
         <activity
-            android:name=".TesteNivelActivity"
+            android:name=".SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".PerformanceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CompleteLevelActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UpLevelBActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ConfirmLogoutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LevelReportActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GameOverActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".QuestionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TesteLevelActivity"
             android:exported="false" />
         <activity
             android:name=".ValidActivity"
@@ -33,9 +66,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".QuestionActivity"
-            android:exported="false" />
         <activity
             android:name=".HomeActivity"
             android:exported="true">

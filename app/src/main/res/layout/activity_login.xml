@@ -49,17 +49,19 @@
         app:layout_constraintStart_toStartOf="@id/campoEnter"
         app:layout_constraintTop_toTopOf="@id/campoEnter"/>
 
-    <TextView
-        android:id="@+id/nameEnter"
-        android:layout_width="146dp"
-        android:layout_height="19dp"
-        android:layout_marginStart="64dp"
-        android:background="@color/white"
-        android:hint="Nome de usuário"
-        android:gravity="center_horizontal"
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edtTxtNameUser"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:textColor="@color/black"
+        android:background="@drawable/shape_border_input"
+        android:hint="Digite o nome de usuário"
+        android:inputType="textPersonName"
+        android:layout_marginStart="8dp"
         app:layout_constraintBottom_toBottomOf="@id/avatarEnter"
         app:layout_constraintStart_toEndOf="@id/avatarEnter"
-        app:layout_constraintTop_toTopOf="@id/avatarEnter" />
+        app:layout_constraintTop_toTopOf="@id/avatarEnter"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/avatarLock"
@@ -69,18 +71,6 @@
         app:srcCompat="@drawable/ic_lock"
         app:layout_constraintStart_toStartOf="@id/campoEnter"
         app:layout_constraintTop_toBottomOf="@id/avatarEnter"/>
-
-    <TextView
-        android:id="@+id/passwordEnter"
-        android:layout_width="146dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="64dp"
-        android:background="@color/white"
-        android:hint="Senha"
-        android:gravity="center_horizontal"
-        app:layout_constraintBottom_toBottomOf="@id/avatarLock"
-        app:layout_constraintStart_toEndOf="@id/avatarLock"
-        app:layout_constraintTop_toTopOf="@id/avatarLock" />
 
 
     <Button
@@ -95,10 +85,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnCadastrar" />
+        app:layout_constraintTop_toBottomOf="@id/btnRegister" />
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/checkRememberPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="35dp"
@@ -109,19 +99,19 @@
         app:layout_constraintTop_toBottomOf="@id/campoEnter" />
 
     <TextView
-        android:id="@+id/tvForSenha"
+        android:id="@+id/tvForgotPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="8dp"
         android:text="Esqueci minha senha"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.425"
+        app:layout_constraintHorizontal_bias="0.448"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/checkBox" />
+        app:layout_constraintTop_toBottomOf="@id/checkRememberPassword" />
 
     <Button
-        android:id="@+id/btnCadastrar"
+        android:id="@+id/btnRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="116dp"
@@ -129,7 +119,21 @@
         android:text="Cadastrar - se"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.571"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edtTxtPasswordUser"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/black"
+        android:background="@drawable/shape_border_input"
+        android:hint="Digite sua senha"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toBottomOf="@+id/avatarLock"
+        app:layout_constraintStart_toEndOf="@+id/avatarLock"
+        app:layout_constraintTop_toTopOf="@+id/avatarLock" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

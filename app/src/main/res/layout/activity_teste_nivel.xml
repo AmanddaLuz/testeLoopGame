@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TesteNivelActivity"
+    tools:context=".TesteLevelActivity"
     android:background="@color/blue_500">
 
     <ImageView
@@ -47,3 +47,4 @@ para realizar seu teste. \nFaça o teste para iniciar no jogo!"
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="alternativeQ1">
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Mercury</item>
+    </string-array>
+
+    <string-array name="alternativeQ2">
+        <item>Amanda</item>
+        <item>Danilo</item>
+        <item>Alice</item>
+        <item>Maromba</item>
+        <item>Maromba</item>
+    </string-array>
+
+    <string-array name="alternativeQ3">
+        <item>Pandora</item>
+        <item>Jack</item>
+        <item>Kira</item>
+        <item>Paçoca</item>
+        <item>Kira</item>
+    </string-array>
+
+    <string-array name="alternativeQ4">
+        <item>Banana</item>
+        <item>Maçã</item>
+        <item>Morango</item>
+        <item>Ameixa</item>
+        <item>Maçã</item>
+    </string-array>
+
+    <string-array name="alternativeQ5">
+        <item>1</item>
+        <item>10</item>
+        <item>100</item>
+        <item>1000</item>
+        <item>1</item>
+    </string-array>
+
+    <string-array name="hintsHome">
+        <item>Ctrl + x ---> Elimina a linha inteira.</item>
+        <item>Ctrl + / ---> Para comentar.</item>
+        <item>Shift + fn +f6 ---> Refactor (renomear).</item>
+        <item>Alt + Enter ---> Sugestão de correção rápida. </item>
+        <item>Ctrl + Alt + L ---> Reformatar código.</item>
+    </string-array>
+</resources>

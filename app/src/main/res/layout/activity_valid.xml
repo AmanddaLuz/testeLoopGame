@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-black"
-        android:text="Redefinir e-mail"
+        android:text="Redefinir senha"
         android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -48,7 +48,7 @@
 
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnRedefinir"
+        android:id="@+id/btnSendCode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
@@ -60,15 +60,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <EditText
-        android:id="@+id/editTextTextEmailAddress"
-        android:layout_width="283dp"
-        android:layout_height="32dp"
-        android:layout_marginTop="60dp"
-        android:ems="10"
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edtTxtEmailUser"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textColor="@color/black"
+        android:background="@drawable/shape_border_input"
         android:hint="Digite um email válido"
-        android:gravity="center_horizontal"
-        android:background="@color/white"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

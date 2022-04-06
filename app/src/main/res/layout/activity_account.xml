@@ -29,11 +29,12 @@
         app:layout_constraintTop_toBottomOf="@+id/tvCreateAccount">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/nameTxtInputEdt"
+            android:id="@+id/edtTxtNameNewUser"
             android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:textColor="@color/black"
             android:background="@drawable/shape_border_input"
-            android:hint="Enter user name"
+            android:hint="Digite o nome de usuário"
             android:inputType="textPersonName" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -47,11 +48,12 @@
         app:layout_constraintTop_toBottomOf="@+id/nameInputLayout">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/emailTxtInputEdt"
+            android:id="@+id/edtTxtEmailNewUser"
             android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:textColor="@color/black"
             android:background="@drawable/shape_border_input"
-            android:hint="Enter e-mail"
+            android:hint="Digite um e-mail válido"
             android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -65,11 +67,12 @@
         app:layout_constraintTop_toBottomOf="@+id/emailInputLayout">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/confirmEmailTxtInputEdt"
+            android:id="@+id/edtTxtConfirmNewEmail"
             android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:textColor="@color/black"
             android:background="@drawable/shape_border_input"
-            android:hint="Confirm e-mail"
+            android:hint="Confirme o e-mail"
             android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -83,11 +86,12 @@
         app:layout_constraintTop_toBottomOf="@+id/confirmEmailInputLayout">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tellTxtInputEdt"
+            android:id="@+id/edtTxtFoneNewUser"
             android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:textColor="@color/black"
             android:background="@drawable/shape_border_input"
-            android:hint="Enter your tellphone number"
+            android:hint="Número de telefone (cel) - Opcional"
             android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -101,11 +105,12 @@
         app:layout_constraintTop_toBottomOf="@+id/tellInputLayout">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/CEPTxtInputEdt"
+            android:id="@+id/edtTxtCEPNewUser"
             android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:textColor="@color/black"
             android:background="@drawable/shape_border_input"
-            android:hint="Enter your CEP"
+            android:hint="Digite o CEP"
             android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -119,11 +124,12 @@
         app:layout_constraintTop_toBottomOf="@+id/CEPInputLayout">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/passwordTxtInputEdt"
+            android:id="@+id/edtTxtPasswordNewUser"
             android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:textColor="@color/black"
             android:background="@drawable/shape_border_input"
-            android:hint="Enter password"
+            android:hint="Digite sua senha"
             android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -137,32 +143,33 @@
         app:layout_constraintTop_toBottomOf="@+id/passwordInputLayout">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/confirmPasswordTxtInputEdt"
+            android:id="@+id/edtTxtConfirmPassword"
             android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:textColor="@color/black"
             android:background="@drawable/shape_border_input"
-            android:hint="Confirm password"
+            android:hint="Confirme sua senha"
             android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <ImageView
-        android:id="@+id/ivCancel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/ivCancelRegister"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
         android:layout_marginStart="36dp"
         android:layout_marginBottom="16dp"
-        android:src="@drawable/ic_back"
+        android:src="@drawable/ic_cancel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/confirmPasswordInputLayout" />
 
     <ImageView
-        android:id="@+id/ivChecked"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/ivConfirmRegister"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_marginEnd="8dp"
-        android:src="@drawable/ic_back"
-        app:layout_constraintBottom_toBottomOf="@+id/ivCancel"
+        android:src="@drawable/ic_correct"
+        app:layout_constraintBottom_toBottomOf="@+id/ivCancelRegister"
         app:layout_constraintEnd_toEndOf="@+id/confirmPasswordInputLayout"
-        app:layout_constraintTop_toTopOf="@+id/ivCancel" />
+        app:layout_constraintTop_toTopOf="@+id/ivCancelRegister" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

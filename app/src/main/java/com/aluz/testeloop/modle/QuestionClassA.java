@@ -1,11 +1,11 @@
 package com.aluz.testeloop.modle;
 
-public class QuestionClass {
+public class QuestionClassA {
     String que;
     String alternativeA, alternativeB, alternativeC, alternativeD, alternativeE;
     String correctAlter;
 
-    public QuestionClass(String question, String alternativeA, String alternativeB, String alternativeC, String alternativeD, String alternativeE, String correctAlter) {
+    public QuestionClassA(String question, String alternativeA, String alternativeB, String alternativeC, String alternativeD, String alternativeE, String correctAlter) {
         this.que = question;
         this.alternativeA = alternativeA;
         this.alternativeB = alternativeB;

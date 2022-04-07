@@ -1,4 +1,4 @@
-package com.aluz.testeloop;
+package com.aluz.testeloop.questions;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,9 +12,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 import java.util.ArrayList;
 
-import com.aluz.testeloop.modle.QuestionClass;
+import com.aluz.testeloop.HomeActivity;
+import com.aluz.testeloop.R;
+import com.aluz.testeloop.modle.QuestionClassA;
 
-public class QuestionActivity extends AppCompatActivity {
+public class AQuestionActivity extends AppCompatActivity {
 
     ImageButton botaoBack;
     TextView txvQuestionsCount, txvTimer, txvQuestions, point;
@@ -24,12 +26,12 @@ public class QuestionActivity extends AppCompatActivity {
 
     CountDownTimer timer;
 
-    ArrayList<QuestionClass> questionsList = new ArrayList<>();
+    ArrayList<QuestionClassA> questionsList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_question);
+        setContentView(R.layout.activity_aquestion);
 
         botaoBack = findViewById(R.id.iButtonBack);
         txvQuestions = findViewById(R.id.tvQuestion);
@@ -52,11 +54,11 @@ public class QuestionActivity extends AppCompatActivity {
         });
 
         //carregando dados
-        questionsList.add(new QuestionClass("Escolha um nome", "Amanda","Bruno","Cátia","Danielle", "Ester", "Amanda"));
-        questionsList.add(new QuestionClass("Qual fruta abaixo é verde?", "Abacate","Banana","Caqui","damasco", "Escarola", "Abacate"));
-        questionsList.add(new QuestionClass("Quantos meses tem um ano?", "2 meses","6 meses","12 meses","24 meses", "36 meses", "12 meses"));
-        questionsList.add(new QuestionClass("Quantos dias tem um ano bissexto?", "265","366","367","368", "369", "366"));
-        questionsList.add(new QuestionClass("Qual a linguagem mais legal?", "Java",".Net","Kotlin","Cobol", "Python", "Python"));
+        questionsList.add(new QuestionClassA("Escolha um nome", "Amanda","Bruno","Cátia","Danielle", "Ester", "Amanda"));
+        questionsList.add(new QuestionClassA("Qual fruta abaixo é verde?", "Abacate","Banana","Caqui","damasco", "Escarola", "Abacate"));
+        questionsList.add(new QuestionClassA("Quantos meses tem um ano?", "2 meses","6 meses","12 meses","24 meses", "36 meses", "12 meses"));
+        questionsList.add(new QuestionClassA("Quantos dias tem um ano bissexto?", "265","366","367","368", "369", "366"));
+        questionsList.add(new QuestionClassA("Qual a linguagem mais legal?", "Java",".Net","Kotlin","Cobol", "Python", "Python"));
 
         //iniciar contador
         counter = 0;
@@ -72,7 +74,7 @@ public class QuestionActivity extends AppCompatActivity {
             }
             @Override
             public void onFinish() {
-                Toast.makeText(QuestionActivity.this, "Acabou o tempo!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(AQuestionActivity.this, "Acabou o tempo!", Toast.LENGTH_SHORT).show();
             }
         };
         timer.start();
@@ -80,7 +82,7 @@ public class QuestionActivity extends AppCompatActivity {
 
 // função de carga das perguntas
     public void loadQuestions(int n){
-        final QuestionClass q = questionsList.get(n);
+        final QuestionClassA q = questionsList.get(n);
         txvQuestionsCount.setText((n + 1) + "/" + questionsList.size());
 
         txvTimer.setText("" + 30);
@@ -107,10 +109,10 @@ public class QuestionActivity extends AppCompatActivity {
             if (response.equals(CorrectAlternative)) {
                 pointcounter = pointcounter + 10;
                 point.setText("Pontos: " + pointcounter);
-                android.widget.Toast.makeText(QuestionActivity.this, "Alternativa correta!",
+                android.widget.Toast.makeText(AQuestionActivity.this, "Alternativa correta!",
                         Toast.LENGTH_SHORT).show();
             }else{
-                Toast.makeText(QuestionActivity.this, "Alternativa errada!",
+                Toast.makeText(AQuestionActivity.this, "Alternativa errada!",
                         Toast.LENGTH_SHORT).show();
             }
             if (counter < (questionsList.size() - 1)){
@@ -118,7 +120,7 @@ public class QuestionActivity extends AppCompatActivity {
                 counter++;
                 loadQuestions(counter);
             }else{
-                Toast.makeText(QuestionActivity.this, "Nível concluído", Toast.LENGTH_SHORT).show();
+                Toast.makeText(AQuestionActivity.this, "Nível concluído", Toast.LENGTH_SHORT).show();
             }
         };
 

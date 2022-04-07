@@ -7,6 +7,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.aluz.testeloop.testNivel.GuideActivity;
+import com.aluz.testeloop.testNivel.QuestionTestActivity;
+
 public class WelcomeActivity extends AppCompatActivity {
 
     AppCompatButton BotaoStartTestLevel;
@@ -21,7 +24,7 @@ public class WelcomeActivity extends AppCompatActivity {
         BotaoStartTestLevel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent retornar = new Intent(getApplicationContext(),QuestionActivity.class);
+                Intent retornar = new Intent(getApplicationContext(), GuideActivity.class);
                 startActivity(retornar);
             }
         });

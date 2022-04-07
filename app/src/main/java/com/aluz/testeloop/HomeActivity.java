@@ -5,16 +5,15 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.aluz.testeloop.dataBase.DataBaseSQLite;
-import com.aluz.testeloop.LoginActivity;
 import com.aluz.testeloop.modle.User;
+import com.aluz.testeloop.questions.AQuestionActivity;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -23,6 +22,7 @@ public class HomeActivity extends AppCompatActivity {
     TextView AvatarUserName, PointsUser, FirstPlayer, SecondPlayer, ThirdPlayer;
     TextView PointsFirstPlayer, PointsSecondPlayer, PointsThirdPlayer, hintsHome, txvtime;
     CountDownTimer timer;
+
     int count = 0;
 
     @Override
@@ -30,12 +30,17 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+
+
+
+
+
         BotaoJogar = findViewById(R.id.btnStartPlay);
         BotaoJogar.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
-                Intent inicio = new Intent(getApplicationContext(), QuestionActivity.class);
+                Intent inicio = new Intent(getApplicationContext(), AQuestionActivity.class);
                 startActivity(inicio);
                 timer.cancel();
 

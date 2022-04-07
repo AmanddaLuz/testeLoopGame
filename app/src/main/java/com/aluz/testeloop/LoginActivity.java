@@ -2,7 +2,6 @@ package com.aluz.testeloop;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -13,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.aluz.testeloop.dataBase.DataBaseSQLite;
 import com.aluz.testeloop.modle.User;
+import com.aluz.testeloop.password.ValidActivity;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class LoginActivity extends AppCompatActivity {
@@ -23,10 +23,13 @@ public class LoginActivity extends AppCompatActivity {
     CheckBox RememberPassword;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+
         BotaoRegisterNewUser = findViewById(R.id.btnRegister);
         BotaoRegisterNewUser.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,31 +48,39 @@ public class LoginActivity extends AppCompatActivity {
         });
         BotaoLogin = findViewById(R.id.btnLogin);
         BotaoLogin.setOnClickListener(view -> {
-            DataBaseSQLite db = new DataBaseSQLite(this);
-            try{
-                User user1 = db.selecionarUser(InputNameUserLogin.getText().toString());
+            if(InputNameUserLogin.getText().toString().isEmpty() ||
+                    InputUserPassword.getText().toString().isEmpty()){
+                Toast.makeText(this, "Insira os dados!", Toast.LENGTH_LONG).show();
+            }else {
+                DataBaseSQLite db = new DataBaseSQLite(this);
+                try {
+                    User user = db.selecionarUser(InputNameUserLogin.getText().toString());
 
-                if (user1.getPassword() != null){
-                    if(user1.getPassword().equals(InputUserPassword.getText().toString())){
+                    if (user.getPassword() != null) {
+                        if (user.getPassword().equals(InputUserPassword.getText().toString())) {
+                            Intent logar = new Intent(getApplicationContext(), WelcomeActivity.class);
+                            startActivity(logar);
+                        } else {
+                            Toast.makeText(this, "Usuário não cadastrado!", Toast.LENGTH_LONG).show();
+                        }
+                    } else {
 
-                        Intent logar = new Intent(getApplicationContext(), HomeActivity.class);
-                               startActivity(logar);
-                    }else {
                         Toast.makeText(this, "Usuário não cadastrado!", Toast.LENGTH_LONG).show();
-                    }
-                }else {
 
+                    }
+
+                } catch (Exception e) {
                     Toast.makeText(this, "Usuário não cadastrado!", Toast.LENGTH_LONG).show();
                 }
-            }catch (Exception e){
-                Toast.makeText(this, "Usuário não cadastrado!", Toast.LENGTH_LONG).show();
             }
+
 
 
         });
         InputNameUserLogin = findViewById(R.id.edtTxtNameUser);
         InputUserPassword = findViewById(R.id.edtTxtPasswordUser);
         RememberPassword = findViewById(R.id.checkRememberPassword);
+
 
         InputUserPassword.setVisibility(View.VISIBLE);
 //        DataBaseSQLite db = new DataBaseSQLite(this);

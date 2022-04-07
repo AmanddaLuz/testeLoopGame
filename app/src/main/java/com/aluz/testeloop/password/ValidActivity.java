@@ -1,4 +1,4 @@
-package com.aluz.testeloop;
+package com.aluz.testeloop.password;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
@@ -6,10 +6,10 @@ import androidx.appcompat.widget.AppCompatButton;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 
+import com.aluz.testeloop.R;
+import com.aluz.testeloop.password.ChangePasswordActivity;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
 
 public class ValidActivity extends AppCompatActivity {
 
@@ -24,7 +24,7 @@ public class ValidActivity extends AppCompatActivity {
         BotaoSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent retornar = new Intent(getApplicationContext(),ChangePasswordActivity.class);
+                Intent retornar = new Intent(getApplicationContext(), ChangePasswordActivity.class);
                 startActivity(retornar);
             }
         });

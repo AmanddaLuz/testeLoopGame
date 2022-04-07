@@ -1,4 +1,4 @@
-package com.aluz.testeloop;
+package com.aluz.testeloop.password;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.aluz.testeloop.LoginActivity;
+import com.aluz.testeloop.R;
 
 public class ChangePasswordActivity extends AppCompatActivity {
 
@@ -24,7 +27,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
         BotaoConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent ok = new Intent(getApplicationContext(),LoginActivity.class);
+                Intent ok = new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(ok);
             }
         });

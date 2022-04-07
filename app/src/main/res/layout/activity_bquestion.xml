@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_500"
+    tools:context=".questions.BQuestionActivity">
+
+    <View
+        android:id="@+id/nivelB"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        tools:layout_editor_absoluteY="1dp"
+        android:background="@color/blue_500"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <TextView
+        android:id="@+id/second"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="nível"
+        android:textSize="32dp"
+        android:textAllCaps="true"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/NivelB"
+        app:layout_constraintBottom_toBottomOf="@id/NivelB"/>
+
+    <ImageView
+        android:id="@+id/NivelB"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:src="@drawable/ic_nivelb"
+        android:layout_marginStart="8dp"
+        app:layout_constraintTop_toTopOf="@id/nivelB"
+        app:layout_constraintStart_toEndOf="@id/second"
+        app:layout_constraintBottom_toBottomOf="@id/nivelB"/>
+
+    <ImageButton
+        android:id="@+id/imgButtonBackB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_back"
+        android:background="@color/blue_500"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/nivelB"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/nivelB"/>
+
+    <TextView
+        android:id="@+id/tvPontuacaoB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pontos: 0"
+        android:textSize="24dp"
+        android:textColor="@color/black"
+        android:background="@drawable/shape_btn_alternatives"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@id/imgButtonBackB"
+        app:layout_constraintTop_toTopOf="@id/imgButtonBackB"
+        app:layout_constraintBottom_toBottomOf="@id/imgButtonBackB"/>
+
+    <LinearLayout
+        android:id="@+id/questionB"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:layout_constraintCircleRadius="8dp"
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nivelB">
+
+        <ImageView
+            android:id="@+id/errorAlternative"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_qimage"
+            android:layout_margin="8dp"/>
+
+
+        <TextView
+            android:id="@+id/tvNumberQuestionB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="1"
+            android:textColor="@color/black"
+            android:textSize="32dp" />
+
+        <TextView
+            android:id="@+id/tvQuestionB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:gravity="center_horizontal"
+            android:text="Exemplo Exemplo Exemplo Exemplo Exemplo Exemplo
+Exemplo Exemplo Exemplo Exemplo Exemplo Exemplo Exemplo Exemplo Exemplo Exemplo
+Exemp Exemplo Exemplo Exemplo "
+            android:textColor="@color/black"
+            android:textSize="16dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/alter"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="40dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="310dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/questionB">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnAlternativeA"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="16dp"
+            android:background = "@drawable/shape_btn_alternatives"
+            android:text="Alternativa A"
+            android:hint="A"
+            android:textColor="@color/black" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnAlternativeB"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="16dp"
+            android:layout_marginTop="92dp"
+            android:background = "@drawable/shape_btn_alternatives"
+            android:text="Alternativa B"
+            android:textColor="@color/black" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnAlternativeC"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="Alternativa C"
+            android:textColor="@color/black"
+            android:background = "@drawable/shape_btn_alternatives"
+            android:layout_margin="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/alternativaB"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnAlternativeD"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="Alternativa D"
+            android:textColor="@color/black"
+            android:background = "@drawable/shape_btn_alternatives"
+            android:layout_margin="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/alternativaC"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnAlternativeE"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="16dp"
+            android:background = "@drawable/shape_btn_alternatives"
+            android:text="Alternativa E"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/alternativaC" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_count" />
+
+    <TextView
+        android:id="@+id/tvTimerB"
+        android:layout_width="48dp"
+        android:layout_height="36dp"
+        android:layout_margin="8dp"
+        android:text="30'"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTxtTimer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvTxtTimer"
+        app:layout_constraintTop_toTopOf="@+id/tvTxtTimer" />
+
+    <TextView
+        android:id="@+id/tvTxtTimer"
+        android:layout_width="141dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="36dp"
+        android:text="Tempo: "
+        android:textSize="24dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.244"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

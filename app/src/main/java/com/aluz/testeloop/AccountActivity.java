@@ -33,22 +33,25 @@ public class AccountActivity extends AppCompatActivity {
 
         BotaoCheckedNewAccount = findViewById(R.id.ivConfirmRegister);
         BotaoCheckedNewAccount.setOnClickListener(view -> {
-                DataBaseSQLite db = new DataBaseSQLite(this);
-
-
-                if(db.inserirUsuario(new User(
-                        InputNameNewUser.getText().toString(),
-                        InputPasswordNewUser.getText().toString(),
-                        "50"))
-                ){
-                    Toast.makeText(this, "Usuário cadastrado com sucesso!", Toast.LENGTH_LONG).show();
-
-                    Intent confirmarCadastro = new Intent(getApplicationContext(), WelcomeActivity.class);
-                    startActivity(confirmarCadastro);
+                if(InputNameNewUser.getText().toString().isEmpty() ||
+                InputPasswordNewUser.getText().toString().isEmpty()){
+                    Toast.makeText(this, "Insira os dados!", Toast.LENGTH_LONG).show();
                 }else {
-                    Toast.makeText(this, "Não foi possível realizar o cadastro!", Toast.LENGTH_LONG).show();
-                }
+                    DataBaseSQLite db = new DataBaseSQLite(this);
+                    if (db.inserirUsuario(new User(
+                            InputNameNewUser.getText().toString(),
+                            InputPasswordNewUser.getText().toString(),
+                            "50"))
+                    ) {
+                        Toast.makeText(this, "Usuário cadastrado com sucesso!", Toast.LENGTH_LONG).show();
 
+
+                        Intent confirmarCadastro = new Intent(getApplicationContext(), LoginActivity.class);
+                        startActivity(confirmarCadastro);
+                    } else {
+                        Toast.makeText(this, "Não foi possível realizar o cadastro!", Toast.LENGTH_LONG).show();
+                    }
+                }
 
         });
         InputNameNewUser = findViewById(R.id.edtTxtNameNewUser);

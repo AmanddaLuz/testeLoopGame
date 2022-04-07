@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TesteLoop">
         <activity
+            android:name=".questions.CQuestionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".testNivel.QuestionTestActivity"
+            android:exported="false" />
+        <activity
             android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
@@ -19,40 +25,44 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".PerformanceActivity"
+            android:name=".testNivel.PerformanceActivity"
             android:exported="false" />
         <activity
-            android:name=".CompleteLevelActivity"
+            android:name=".testNivel.CompleteLevelActivity"
             android:exported="false" />
         <activity
-            android:name=".UpLevelBActivity"
+            android:name=".testNivel.UpLevelBActivity"
             android:exported="false" />
         <activity
             android:name=".ConfirmLogoutActivity"
             android:exported="false" />
         <activity
-            android:name=".LevelReportActivity"
+            android:name=".testNivel.LevelReportAActivity"
             android:exported="false" />
         <activity
-            android:name=".GameOverActivity"
+            android:name=".questions.AQuestionActivity"
+            android:exported="false" />
+        <activity android:name=".questions.BQuestionActivity"
+            android:exported="false"/>
+<!--        <activity android:name=".questions.CQuestionActivity"-->
+<!--            android:exported="false"/>-->
+        <activity
+            android:name=".testNivel.GuideActivity"
             android:exported="false" />
         <activity
-            android:name=".StartActivity"
+            android:name=".testNivel.LevelReportBActivity"
             android:exported="false" />
         <activity
-            android:name=".QuestionActivity"
+            android:name=".testNivel.LevelReportCActivity"
             android:exported="false" />
         <activity
-            android:name=".TesteLevelActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ValidActivity"
+            android:name=".password.ValidActivity"
             android:exported="false" />
         <activity
             android:name=".WelcomeActivity"
             android:exported="false" />
         <activity
-            android:name=".ChangePasswordActivity"
+            android:name=".password.ChangePasswordActivity"
             android:exported="false" />
         <activity
             android:name=".AccountActivity"

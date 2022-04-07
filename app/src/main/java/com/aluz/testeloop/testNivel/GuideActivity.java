@@ -1,4 +1,4 @@
-package com.aluz.testeloop;
+package com.aluz.testeloop.testNivel;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,21 +7,23 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class TesteLevelActivity extends AppCompatActivity {
+import com.aluz.testeloop.R;
+
+public class GuideActivity extends AppCompatActivity {
 
     Button BotaoProntoTest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_teste_nivel);
+        setContentView(R.layout.activity_guide);
 
         BotaoProntoTest = findViewById(R.id.btnTest);
 
         BotaoProntoTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), QuestionActivity.class);
+                Intent intent = new Intent(getApplicationContext(), QuestionTestActivity.class);
                 startActivity(intent);
 
             }

@@ -14,43 +14,35 @@ import java.util.ArrayList;
 
 import com.aluz.testeloop.HomeActivity;
 import com.aluz.testeloop.R;
+import com.aluz.testeloop.dataBase.DataBaseSQLite;
 import com.aluz.testeloop.modle.QuestionClassA;
+import com.aluz.testeloop.modle.User;
+import com.aluz.testeloop.testNivel.LevelReportAActivity;
+import com.aluz.testeloop.testNivel.LevelReportBActivity;
+import com.aluz.testeloop.testNivel.LevelReportCActivity;
 
 public class AQuestionActivity extends AppCompatActivity {
 
     ImageButton botaoBack;
     TextView txvQuestionsCount, txvTimer, txvQuestions, point;
     Button alternativeA, alternativeB, alternativeC, alternativeD, alternativeE;
-
     int counter, pointcounter;
-
     CountDownTimer timer;
-
     ArrayList<QuestionClassA> questionsList = new ArrayList<>();
+    String nameHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aquestion);
+        InitFind();
+        Bundle bundle = getIntent().getExtras();
+        nameHome = bundle.getString("nameHome");
 
-        botaoBack = findViewById(R.id.iButtonBack);
-        txvQuestions = findViewById(R.id.tvQuestion);
-        txvQuestionsCount = findViewById(R.id.tvNumberQuestion);
-        txvTimer = findViewById(R.id.tvTimer);
-        point = findViewById(R.id.tvPontuacao);
-        alternativeA = findViewById(R.id.btnAlternativeA);
-        alternativeB = findViewById(R.id.btnAlternativeB);
-        alternativeC = findViewById(R.id.btnAlternativeC);
-        alternativeD = findViewById(R.id.btnAlternativeD);
-        alternativeE = findViewById(R.id.btnAlternativeE);
-
-        botaoBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent home = new Intent(getApplicationContext(), HomeActivity.class);
-                startActivity(home);
-                timer.cancel();
-            }
+        botaoBack.setOnClickListener(v -> {
+            Intent home = new Intent(getApplicationContext(), HomeActivity.class);
+            startActivity(home);
+            timer.cancel();
         });
 
         //carregando dados
@@ -104,6 +96,7 @@ public class AQuestionActivity extends AppCompatActivity {
 
 
     }
+
 // função de validação da resposta
     void tryTeste (String response, String CorrectAlternative){
             if (response.equals(CorrectAlternative)) {
@@ -123,10 +116,47 @@ public class AQuestionActivity extends AppCompatActivity {
                 Toast.makeText(AQuestionActivity.this, "Nível concluído", Toast.LENGTH_SHORT).show();
             }
         };
+    public void validatePoint(){
+        if (pointcounter >= 0 && pointcounter <= 40) {
+            pointUp(nameHome, "1");
+            Intent congratsA = new Intent(getApplicationContext(), LevelReportAActivity.class);
+            congratsA.putExtra("reportA", nameHome);
+            startActivity(congratsA);
+        }
+        else if (pointcounter > 40 && pointcounter <= 70){
+            pointUp(nameHome, "2");
+            Intent congratsB = new Intent(getApplicationContext(), LevelReportBActivity.class);
+            congratsB.putExtra("reportB", nameHome);
+            startActivity(congratsB);
+        }
+        else {
+            pointUp(nameHome, "3");
+            Intent congratsC = new Intent(getApplicationContext(), LevelReportCActivity.class);
+            congratsC.putExtra("reportC", nameHome);
+            startActivity(congratsC);
+        }
+    }
+    public void pointUp(String name, String nivel){
+        User player = new User();
+        player.setNivel(nivel);
+        player.setLogin(name);
+        DataBaseSQLite db = new DataBaseSQLite(this);
+        db.atualizarPontos(player);
 
-// função de chamada da proxima tela
-    void proximaTela (Class newact){
-        Intent home = new Intent(getApplicationContext(), newact);
-        startActivity(home);
+        //Toast.makeText(this, "Falha ao atualizar!", Toast.LENGTH_LONG).show();
+
+    }
+
+    public void InitFind(){
+        botaoBack = findViewById(R.id.iButtonBack);
+        txvQuestions = findViewById(R.id.tvQuestion);
+        txvQuestionsCount = findViewById(R.id.tvNumberQuestion);
+        txvTimer = findViewById(R.id.tvTimer);
+        point = findViewById(R.id.tvPontuacao);
+        alternativeA = findViewById(R.id.btnAlternativeA);
+        alternativeB = findViewById(R.id.btnAlternativeB);
+        alternativeC = findViewById(R.id.btnAlternativeC);
+        alternativeD = findViewById(R.id.btnAlternativeD);
+        alternativeE = findViewById(R.id.btnAlternativeE);
     }
 }

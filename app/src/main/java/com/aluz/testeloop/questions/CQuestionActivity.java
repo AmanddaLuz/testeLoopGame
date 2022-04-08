@@ -22,36 +22,20 @@ public class CQuestionActivity extends AppCompatActivity {
     ImageButton botaoBackC;
     TextView txvQuestionsCountC, txvTimerC, txvQuestionsC, pointC;
     Button alternativeA, alternativeB, alternativeC, alternativeD, alternativeE;
-
     int counter, pointcounter;
-
     CountDownTimer timer;
-
     ArrayList<QuestionClassA> questionsList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cquestion);
+        InitFind();
 
-        botaoBackC = findViewById(R.id.imgButtonBackC);
-        txvQuestionsC = findViewById(R.id.tvQuestionC);
-        txvQuestionsCountC = findViewById(R.id.tvNumberQuestionC);
-        txvTimerC = findViewById(R.id.tvTimerC);
-        pointC = findViewById(R.id.tvPontuacao);
-        alternativeA = findViewById(R.id.btnAlternativeA);
-        alternativeB = findViewById(R.id.btnAlternativeB);
-        alternativeC = findViewById(R.id.btnAlternativeC);
-        alternativeD = findViewById(R.id.btnAlternativeD);
-        alternativeE = findViewById(R.id.btnAlternativeE);
-
-        botaoBackC.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent home = new Intent(getApplicationContext(), HomeActivity.class);
-                startActivity(home);
-                timer.cancel();
-            }
+        botaoBackC.setOnClickListener(v -> {
+            Intent home = new Intent(getApplicationContext(), HomeActivity.class);
+            startActivity(home);
+            timer.cancel();
         });
 
         //carregando dados
@@ -105,6 +89,7 @@ public class CQuestionActivity extends AppCompatActivity {
 
 
     }
+
     // função de validação da resposta
     void tryTeste (String response, String CorrectAlternative){
         if (response.equals(CorrectAlternative)) {
@@ -125,10 +110,18 @@ public class CQuestionActivity extends AppCompatActivity {
         }
     };
 
-    // função de chamada da proxima tela
-    void proximaTela (Class newact){
-        Intent home = new Intent(getApplicationContext(), newact);
-        startActivity(home);
+    public void InitFind(){
+        botaoBackC = findViewById(R.id.imgButtonBackC);
+        txvQuestionsC = findViewById(R.id.tvQuestionC);
+        txvQuestionsCountC = findViewById(R.id.tvNumberQuestionC);
+        txvTimerC = findViewById(R.id.tvTimerC);
+        pointC = findViewById(R.id.tvPontuacao);
+        alternativeA = findViewById(R.id.btnAlternativeA);
+        alternativeB = findViewById(R.id.btnAlternativeB);
+        alternativeC = findViewById(R.id.btnAlternativeC);
+        alternativeD = findViewById(R.id.btnAlternativeD);
+        alternativeE = findViewById(R.id.btnAlternativeE);
+
     }
 
 }

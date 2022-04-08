@@ -57,7 +57,6 @@ public class AccountActivity extends AppCompatActivity {
         InputNameNewUser = findViewById(R.id.edtTxtNameNewUser);
         InputEmailNewUser = findViewById(R.id.edtTxtEmailNewUser);
         InputConfirmEmail = findViewById(R.id.edtTxtConfirmNewEmail);
-        InputFoneNewUser = findViewById(R.id.edtTxtFoneNewUser);
         InputCEPNewUser = findViewById(R.id.edtTxtCEPNewUser);
         InputPasswordNewUser = findViewById(R.id.edtTxtPasswordNewUser);
         InputConfirmPassword = findViewById(R.id.edtTxtConfirmPassword);

@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-black"
-        android:text="Bem-Vindo\n         ao"
+        android:text="Você está no"
         android:textColor="@color/white"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,22 +26,22 @@
         android:layout_height="200dp"
         android:layout_marginTop="8dp"
         android:src="@drawable/logo_novo"
-        app:layout_constraintBottom_toTopOf="@+id/btnRedefinir"
+        app:layout_constraintBottom_toTopOf="@+id/btnStartTestLevel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvCreateAccount"
-        app:layout_constraintVertical_bias="0.283" />
+        app:layout_constraintVertical_bias="0.031" />
 
     <TextView
         android:id="@+id/tvExplain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
         android:fontFamily="sans-serif-black"
+        android:gravity="center_horizontal"
         android:text="Você será direcionado ao nível correspondente."
         android:textColor="@color/white"
-        android:textSize="16dp"
-        android:layout_marginTop="16dp"
-        android:gravity="center_horizontal"
+        android:textSize="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ivLogo" />
@@ -58,6 +58,23 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txvNameWelcome"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:text="Jogador"
+        android:textSize="32dp"
+        android:textAllCaps="true"
+        android:gravity="center_horizontal"
+        android:textColor="@color/orange_200"
+        app:layout_constraintBottom_toTopOf="@+id/tvExplain"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivLogo"
+        app:layout_constraintVertical_bias="0.2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

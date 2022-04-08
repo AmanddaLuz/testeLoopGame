@@ -31,7 +31,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edtTxtNameNewUser"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="60dp"
             android:textColor="@color/black"
             android:background="@drawable/shape_border_input"
             android:hint="Digite o nome de usuário"
@@ -86,13 +86,13 @@
         app:layout_constraintTop_toBottomOf="@+id/confirmEmailInputLayout">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtTxtFoneNewUser"
+            android:id="@+id/edtTxtCEPNewUser"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:textColor="@color/black"
             android:background="@drawable/shape_border_input"
-            android:hint="Número de telefone (cel) - Opcional"
-            android:inputType="textEmailAddress" />
+            android:hint="Digite o CEP"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/black" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -105,13 +105,13 @@
         app:layout_constraintTop_toBottomOf="@+id/tellInputLayout">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtTxtCEPNewUser"
+            android:id="@+id/edtTxtPasswordNewUser"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:textColor="@color/black"
+            android:layout_height="60dp"
             android:background="@drawable/shape_border_input"
-            android:hint="Digite o CEP"
-            android:inputType="textEmailAddress" />
+            android:hint="Digite sua senha"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/black" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -124,13 +124,13 @@
         app:layout_constraintTop_toBottomOf="@+id/CEPInputLayout">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtTxtPasswordNewUser"
+            android:id="@+id/edtTxtConfirmPassword"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:textColor="@color/black"
             android:background="@drawable/shape_border_input"
-            android:hint="Digite sua senha"
-            android:inputType="textEmailAddress" />
+            android:hint="Confirme sua senha"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/black" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -142,14 +142,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordInputLayout">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtTxtConfirmPassword"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:textColor="@color/black"
-            android:background="@drawable/shape_border_input"
-            android:hint="Confirme sua senha"
-            android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <ImageView

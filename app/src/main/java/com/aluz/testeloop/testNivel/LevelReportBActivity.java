@@ -14,26 +14,23 @@ import com.aluz.testeloop.R;
 import com.aluz.testeloop.questions.BQuestionActivity;
 
 public class LevelReportBActivity extends AppCompatActivity {
-    Button continueQuestionsLevelB;
+
     ImageButton backHomeB;
+    String nameLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level_reportb);
-        continueQuestionsLevelB = findViewById(R.id.btnContinueLevelB);
-        continueQuestionsLevelB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent questionB = new Intent(getApplicationContext(), BQuestionActivity.class);
-                startActivity(questionB);
-            }
-        });
+        Bundle bundle = getIntent().getExtras();
+        nameLogin = bundle.getString("reportB");
+
         backHomeB = findViewById(R.id.imgbBackHomeB);
         backHomeB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent home = new Intent(getApplicationContext(), HomeActivity.class);
+                home.putExtra("nameLogin", nameLogin);
                 startActivity(home);
             }
         });

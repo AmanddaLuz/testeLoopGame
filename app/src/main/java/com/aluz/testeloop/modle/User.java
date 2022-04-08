@@ -6,6 +6,7 @@ public class User implements Cloneable {
     private String login;
     private String password;
     private String pontuacao;
+    private String nivel;
 
     public User() {}
 
@@ -13,12 +14,12 @@ public class User implements Cloneable {
         this.login = login;
         this.password = password;
     }
+
     public User(String login, String password, String pontuacao) {
         this.login = login;
         this.password = password;
         this.pontuacao = pontuacao;
     }
-
 
     public User(int id, String login, String password) {
         this.id = id;
@@ -34,13 +35,26 @@ public class User implements Cloneable {
         this.pontuacao = pontuacao;
 
     }
+    public User(int id, String login, String password, String pontuacao, String nivel) {
+        this.id = id;
+        this.login = login;
+        this.password = password;
+        this.pontuacao = pontuacao;
+        this.nivel = nivel;
+
+    }
 
     public User(User u) {
         this.id = u.id;
         this.login = u.login;
         this.password = u.password;
         this.pontuacao = u.pontuacao;
+        this.nivel = u.nivel;
 
+    }
+
+    public User(String nivel) {
+        this.nivel = nivel;
     }
 
     public int getId() {
@@ -70,6 +84,14 @@ public class User implements Cloneable {
     public String getPontuacao() {return this.pontuacao; }
 
     public void setPontuacao(String pontuacao) {this.pontuacao = pontuacao;}
+
+    public String getNivel() {
+        return this.nivel;
+    }
+
+    public void setNivel(String nivel) {
+        this.nivel = nivel;
+    }
 
     @Override
     public Object clone(){

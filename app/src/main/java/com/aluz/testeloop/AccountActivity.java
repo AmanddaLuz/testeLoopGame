@@ -41,11 +41,9 @@ public class AccountActivity extends AppCompatActivity {
                     if (db.inserirUsuario(new User(
                             InputNameNewUser.getText().toString(),
                             InputPasswordNewUser.getText().toString(),
-                            "50"))
+                            "0"))
                     ) {
                         Toast.makeText(this, "Usuário cadastrado com sucesso!", Toast.LENGTH_LONG).show();
-
-
                         Intent confirmarCadastro = new Intent(getApplicationContext(), LoginActivity.class);
                         startActivity(confirmarCadastro);
                     } else {

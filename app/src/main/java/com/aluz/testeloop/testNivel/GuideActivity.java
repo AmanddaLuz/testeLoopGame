@@ -20,10 +20,8 @@ public class GuideActivity extends AppCompatActivity {
         setContentView(R.layout.activity_guide);
         Bundle bundle = getIntent().getExtras();
         name = bundle.getString("nameLogin");
-        Log.e("*****************",  name );
 
         BotaoProntoTest = findViewById(R.id.btnTest);
-
         BotaoProntoTest.setOnClickListener(view -> {
             Intent intent = new Intent(getApplicationContext(), QuestionTestActivity.class);
             intent.putExtra("nameGuide", name);

@@ -1,4 +1,4 @@
-package com.aluz.testeloop;
+package com.aluz.testeloop.testNivel;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.aluz.testeloop.R;
 import com.aluz.testeloop.dataBase.DataBaseSQLite;
 import com.aluz.testeloop.modle.User;
 import com.aluz.testeloop.testNivel.GuideActivity;
@@ -27,7 +28,6 @@ public class WelcomeActivity extends AppCompatActivity {
         InitFind();
         Bundle bundle = getIntent().getExtras();
         nameWelcome = bundle.getString("nameWelcome");
-        Log.e("*****************",  nameWelcome);
         Welcome.setText(nameWelcome);
 
         BotaoStartTestLevel.setOnClickListener(view -> {

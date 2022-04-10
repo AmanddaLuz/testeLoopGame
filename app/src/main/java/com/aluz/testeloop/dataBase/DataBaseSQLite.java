@@ -7,11 +7,11 @@ import android.database.Cursor;
 //import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
-import androidx.annotation.Nullable;
-
+import com.aluz.testeloop.modle.Ranking;
 import com.aluz.testeloop.modle.User;
+
+import java.util.ArrayList;
 
 public class DataBaseSQLite extends SQLiteOpenHelper {
 
@@ -21,6 +21,7 @@ public class DataBaseSQLite extends SQLiteOpenHelper {
     private static final String PASSWORD = "password";
     public static final String PONTUACAO = "pontuacao";
     public static final String NIVEL = "nivel";
+    public ArrayList<Ranking> rankingList = new ArrayList<>();
 
     private static final String TABELA = "Dados_Usuario";
     private static final int VERSAO = 1;
@@ -59,12 +60,14 @@ public class DataBaseSQLite extends SQLiteOpenHelper {
         result = db.insert(TABELA, null, values);
         db.close();
 
-        if (result == -1)
+        if (result == -1) {
             return false;
-        else
+        } else {
             return true;
+        }
 
     }
+
     public User validarLogin(String login) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(
@@ -78,8 +81,9 @@ public class DataBaseSQLite extends SQLiteOpenHelper {
                     cursor.getString(1),
                     cursor.getString(2));
             return (User) user.clone();
-        } else
+        } else {
             return null;
+        }
     }
 
     public boolean atualizarPontos(User points) {
@@ -88,13 +92,14 @@ public class DataBaseSQLite extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(PONTUACAO, points.getPontuacao());
 
-        result = db.update(TABELA, values, LOGIN+ " = ?",new String[]{String.valueOf(points.getLogin())});
+        result = db.update(TABELA, values, LOGIN + " = ?", new String[]{String.valueOf(points.getLogin())});
         db.close();
 
-        if (result == -1)
+        if (result == -1) {
             return false;
-        else
+        } else {
             return true;
+        }
 
     }
 
@@ -103,14 +108,15 @@ public class DataBaseSQLite extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(NIVEL, player.getNivel());
-        result = db.update(TABELA, values,LOGIN+ " = ?" , new String[]{String.valueOf(player.getLogin())});
+        result = db.update(TABELA, values, LOGIN + " = ?", new String[]{String.valueOf(player.getLogin())});
         //result =  db.update(TABELA, values,LOGIN, new String[]{String.valueOf(login)});
         db.close();
 
-        if (result == -1)
+        if (result == -1) {
             return false;
-        else
+        } else {
             return true;
+        }
     }
 
     public User selecionarNivel(String login) {
@@ -127,6 +133,7 @@ public class DataBaseSQLite extends SQLiteOpenHelper {
             return null;
 
     }
+
     public User selecionarUser(String login) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(
@@ -146,7 +153,8 @@ public class DataBaseSQLite extends SQLiteOpenHelper {
             return null;
 
     }
-    public User selecionarUserPorID(int id){
+
+    public User selecionarUserPorID(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = db.query(
@@ -154,7 +162,7 @@ public class DataBaseSQLite extends SQLiteOpenHelper {
                 new String[]{ID, LOGIN, PASSWORD, PONTUACAO, NIVEL},
                 ID + " = ?",
                 new String[]{String.valueOf(id)}, null, null, null, null);
-        if(cursor != null){
+        if (cursor != null) {
             cursor.moveToFirst();
             User user = new User(
                     Integer.parseInt(cursor.getString(0)),
@@ -162,8 +170,34 @@ public class DataBaseSQLite extends SQLiteOpenHelper {
                     cursor.getString(2),
                     cursor.getString(3));
             return (User) user.clone();
-        }else
+        } else
             return null;
 
+    }
+
+    public ArrayList<Ranking> rankingList() {
+        SQLiteDatabase DB = this.getWritableDatabase();
+        Cursor cursor = DB.rawQuery("Select LOGIN, PONTUACAO from Dados_Usuario order by PONTUACAO DESC", null);
+        if(cursor != null){
+            cursor.moveToNext();
+            Ranking list = new Ranking(
+                    cursor.getString(0),
+                    cursor.getString(1));
+
+            rankingList.add(new Ranking(list.getLogin(),list.getPontuacao()));
+            cursor.moveToNext();
+            Ranking list1 = new Ranking(
+                    cursor.getString(0),
+                    cursor.getString(1));
+            rankingList.add(new Ranking(list1.getLogin(),list1.getPontuacao()));
+            cursor.moveToNext();
+            Ranking list2 = new Ranking(
+                    cursor.getString(0),
+                    cursor.getString(1));
+            rankingList.add(new Ranking(list2.getLogin(),list2.getPontuacao()));
+            return rankingList;
+
+        }else
+            return null;
     }
 }

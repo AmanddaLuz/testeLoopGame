@@ -1,11 +1,12 @@
 package com.aluz.testeloop.questions;
 
+import static java.lang.Integer.parseInt;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -13,7 +14,10 @@ import android.widget.Toast;
 
 import com.aluz.testeloop.HomeActivity;
 import com.aluz.testeloop.R;
+import com.aluz.testeloop.dataBase.DataBaseSQLite;
 import com.aluz.testeloop.modle.QuestionClassA;
+import com.aluz.testeloop.modle.User;
+import com.aluz.testeloop.testNivel.UpLevelCActivity;
 
 import java.util.ArrayList;
 
@@ -25,6 +29,7 @@ public class BQuestionActivity extends AppCompatActivity {
     int counter, pointcounter;
     CountDownTimer timer;
     ArrayList<QuestionClassA> questionsList = new ArrayList<>();
+    String nameHome, pointsHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,10 +37,18 @@ public class BQuestionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_bquestion);
         InitFind();
 
+        Bundle bundle = getIntent().getExtras();
+        nameHome = bundle.getString("nameHome");
+        pointsHome = bundle.getString("pointsHome");
+
+        pointB.setText("Pontos: " +  pointsHome);
+
         botaoBackB.setOnClickListener(v -> {
-            Intent home = new Intent(getApplicationContext(), HomeActivity.class);
-            startActivity(home);
             timer.cancel();
+            Intent home = new Intent(getApplicationContext(), HomeActivity.class);
+            home.putExtra("nameLogin", nameHome);
+            startActivity(home);
+
         });
 
         //carregando dados
@@ -47,7 +60,7 @@ public class BQuestionActivity extends AppCompatActivity {
 
         //iniciar contador
         counter = 0;
-        pointcounter = 0;
+        pointcounter = Integer.parseInt(pointsHome);
         loadQuestions(counter);
 
         txvTimerB.setText("30");
@@ -60,6 +73,12 @@ public class BQuestionActivity extends AppCompatActivity {
             @Override
             public void onFinish() {
                 Toast.makeText(BQuestionActivity.this, "Acabou o tempo!", Toast.LENGTH_SHORT).show();
+                if (counter < (questionsList.size() - 1)){
+                    counter++;
+                }else{
+                    counter = 0;
+                }
+                loadQuestions(counter);
             }
         };
         timer.start();
@@ -94,7 +113,8 @@ public class BQuestionActivity extends AppCompatActivity {
     void tryTeste (String response, String CorrectAlternative){
         if (response.equals(CorrectAlternative)) {
             pointcounter = pointcounter + 10;
-            pointB.setText("Pontos: " + pointcounter);
+            validatePoint();
+            pointB.setText("Pontos: " +  pointcounter);
             android.widget.Toast.makeText(BQuestionActivity.this, "Alternativa correta!",
                     Toast.LENGTH_SHORT).show();
         }else{
@@ -102,13 +122,38 @@ public class BQuestionActivity extends AppCompatActivity {
                     Toast.LENGTH_SHORT).show();
         }
         if (counter < (questionsList.size() - 1)){
-            timer.cancel();
             counter++;
-            loadQuestions(counter);
         }else{
-            Toast.makeText(BQuestionActivity.this, "Nível concluído", Toast.LENGTH_SHORT).show();
+            counter = 0;
+            //           Toast.makeText(AQuestionActivity.this, "Nível concluído", Toast.LENGTH_SHORT).show();
         }
+        timer.cancel();
+        loadQuestions(counter);
     };
+
+    public void validatePoint(){
+        pointUp(nameHome, pointcounter);
+        if(pointcounter == 200){
+            levelUp(nameHome, "3");
+            Intent upTolevelC = new Intent(getApplicationContext(), UpLevelCActivity.class);
+            upTolevelC.putExtra("nameHome",nameHome);
+            upTolevelC.putExtra("pointsHome",String.valueOf(pointcounter));
+            startActivity(upTolevelC);}
+    }
+    public void pointUp(String name, int point){
+        User player = new User();
+        player.setPontuacao(String.valueOf(point));
+        player.setLogin(name);
+        DataBaseSQLite db = new DataBaseSQLite(this);
+        db.atualizarPontos(player);
+  }
+    public void levelUp(String name, String nivel){
+        User player = new User();
+        player.setNivel(nivel);
+        player.setLogin(name);
+        DataBaseSQLite db = new DataBaseSQLite(this);
+        db.atualizarNivel(player);
+}
 
     public void InitFind(){
         botaoBackB = findViewById(R.id.imgButtonBackB);

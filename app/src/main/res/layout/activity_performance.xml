@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="156dp"
         android:gravity="center_horizontal"
-        android:text="Seu desempenho foi de:"
+        android:text="Parabéns! Você concluiu todos os nossos níveis!"
         android:textColor="@color/white"
         android:textSize="32dp"
         app:layout_constraintEnd_toEndOf="parent"

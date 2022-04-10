@@ -11,12 +11,13 @@
         android:id="@+id/btnContinueLevelA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="176dp"
+        android:layout_marginBottom="76dp"
         android:backgroundTint="@color/orange_200"
+        android:visibility="gone"
         android:text="Continuar para nível A"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.581"
+        app:layout_constraintHorizontal_bias="0.608"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
@@ -35,21 +36,21 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="132dp"
+        android:layout_marginBottom="276dp"
         android:gravity="center_horizontal"
         android:text="Você foi direcionado para o nível:"
         android:textColor="@color/white"
         android:textSize="32dp"
         app:layout_constraintBottom_toTopOf="@+id/btnContinueLevelA"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="104dp"
+        android:layout_marginBottom="76dp"
         android:text="PARABÉNS"
         android:textColor="@color/orange_200"
         android:textSize="64dp"

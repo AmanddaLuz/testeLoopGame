@@ -2,7 +2,6 @@ package com.aluz.testeloop;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -14,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.aluz.testeloop.dataBase.DataBaseSQLite;
 import com.aluz.testeloop.modle.User;
 import com.aluz.testeloop.password.ValidActivity;
+import com.aluz.testeloop.testNivel.WelcomeActivity;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class LoginActivity extends AppCompatActivity {
@@ -58,8 +58,7 @@ public class LoginActivity extends AppCompatActivity {
                             }
                             else {
                                 Intent welcome = new Intent(getApplicationContext(), WelcomeActivity.class);
-                                Log.e("*****************",  user.getLogin() );
-                                welcome.putExtra("nameWelcome", user.getLogin());
+                               welcome.putExtra("nameWelcome", user.getLogin());
                                 startActivity(welcome);
                             }
                         } else {

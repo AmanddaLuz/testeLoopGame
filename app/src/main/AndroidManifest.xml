@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TesteLoop">
         <activity
+            android:name=".recyclerview.RecyclerRanking"
+            android:exported="false" />
+        <activity
+            android:name=".testNivel.UpLevelCActivity"
+            android:exported="false" />
+        <activity
             android:name=".questions.CQuestionActivity"
             android:exported="false" />
         <activity
@@ -42,10 +48,10 @@
         <activity
             android:name=".questions.AQuestionActivity"
             android:exported="false" />
-        <activity android:name=".questions.BQuestionActivity"
-            android:exported="false"/>
-<!--        <activity android:name=".questions.CQuestionActivity"-->
-<!--            android:exported="false"/>-->
+        <activity
+            android:name=".questions.BQuestionActivity"
+            android:exported="false" /> <!-- <activity android:name=".questions.CQuestionActivity" -->
+        <!-- android:exported="false"/> -->
         <activity
             android:name=".testNivel.GuideActivity"
             android:exported="false" />
@@ -59,7 +65,7 @@
             android:name=".password.ValidActivity"
             android:exported="false" />
         <activity
-            android:name=".WelcomeActivity"
+            android:name=".testNivel.WelcomeActivity"
             android:exported="false" />
         <activity
             android:name=".password.ChangePasswordActivity"

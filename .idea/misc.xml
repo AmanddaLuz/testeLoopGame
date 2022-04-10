@@ -8,7 +8,7 @@
         <entry key="..\:/Users/amand/AndroidStudioProjects/testeLoop/app/src/main/res/drawable/btnalternatives.xml" value="0.2075" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/testeLoop/app/src/main/res/layout/activity_account.xml" value="0.22" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/testeLoop/app/src/main/res/layout/activity_aquestion.xml" value="0.14266304347826086" />
-        <entry key="..\:/Users/amand/AndroidStudioProjects/testeLoop/app/src/main/res/layout/activity_bquestion.xml" value="0.14266304347826086" />
+        <entry key="..\:/Users/amand/AndroidStudioProjects/testeLoop/app/src/main/res/layout/activity_bquestion.xml" value="0.21" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/testeLoop/app/src/main/res/layout/activity_calculadora.xml" value="0.184375" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/testeLoop/app/src/main/res/layout/activity_challenge.xml" value="0.2" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/testeLoop/app/src/main/res/layout/activity_change_password.xml" value="0.22" />
@@ -21,7 +21,7 @@
         <entry key="..\:/Users/amand/AndroidStudioProjects/testeLoop/app/src/main/res/layout/activity_level_report.xml" value="0.2" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/testeLoop/app/src/main/res/layout/activity_level_reportB.xml" value="0.1838768115942029" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/testeLoop/app/src/main/res/layout/activity_level_reportC.xml" value="0.1838768115942029" />
-        <entry key="..\:/Users/amand/AndroidStudioProjects/testeLoop/app/src/main/res/layout/activity_level_reporta.xml" value="0.14427083333333332" />
+        <entry key="..\:/Users/amand/AndroidStudioProjects/testeLoop/app/src/main/res/layout/activity_level_reporta.xml" value="0.12" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/testeLoop/app/src/main/res/layout/activity_level_reportb.xml" value="0.11594202898550725" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/testeLoop/app/src/main/res/layout/activity_level_reportc.xml" value="0.11594202898550725" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/testeLoop/app/src/main/res/layout/activity_login.xml" value="0.2" />
@@ -32,6 +32,7 @@
         <entry key="..\:/Users/amand/AndroidStudioProjects/testeLoop/app/src/main/res/layout/activity_question.xml" value="0.22" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/testeLoop/app/src/main/res/layout/activity_question2.xml" value="0.2" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/testeLoop/app/src/main/res/layout/activity_question_test.xml" value="0.16822916666666668" />
+        <entry key="..\:/Users/amand/AndroidStudioProjects/testeLoop/app/src/main/res/layout/activity_recycler_ranking.xml" value="0.1" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/testeLoop/app/src/main/res/layout/activity_report_level_aactivity.xml" value="0.14266304347826086" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/testeLoop/app/src/main/res/layout/activity_splash.xml" value="0.2" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/testeLoop/app/src/main/res/layout/activity_start.xml" value="0.2" />
@@ -39,8 +40,10 @@
         <entry key="..\:/Users/amand/AndroidStudioProjects/testeLoop/app/src/main/res/layout/activity_teste_nivel.xml" value="0.25" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/testeLoop/app/src/main/res/layout/activity_testeeee.xml" value="0.2" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/testeLoop/app/src/main/res/layout/activity_ultima.xml" value="0.2" />
-        <entry key="..\:/Users/amand/AndroidStudioProjects/testeLoop/app/src/main/res/layout/activity_up_nivel_bactivity.xml" value="0.2" />
+        <entry key="..\:/Users/amand/AndroidStudioProjects/testeLoop/app/src/main/res/layout/activity_up_level_cactivity.xml" value="0.16" />
+        <entry key="..\:/Users/amand/AndroidStudioProjects/testeLoop/app/src/main/res/layout/activity_up_nivel_bactivity.xml" value="0.14" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/testeLoop/app/src/main/res/layout/activity_up_nivel_cactivity.xml" value="0.2" />
+        <entry key="..\:/Users/amand/AndroidStudioProjects/testeLoop/app/src/main/res/layout/activity_user_list.xml" value="0.2" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/testeLoop/app/src/main/res/layout/activity_valid.xml" value="0.22" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/testeLoop/app/src/main/res/layout/activity_welcome.xml" value="0.25" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/testeLoop/app/src/main/res/layout/item_ranking.xml" value="0.15534420289855072" />

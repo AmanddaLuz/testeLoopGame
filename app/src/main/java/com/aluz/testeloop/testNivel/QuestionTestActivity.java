@@ -26,7 +26,7 @@ public class QuestionTestActivity extends AppCompatActivity {
     int counter, pointcounter;
     CountDownTimer timer;
     ArrayList<QuestionClassA> questionsList = new ArrayList<>();
-    String name;
+    String name, finalPoints;
 
 
     @Override
@@ -36,16 +36,21 @@ public class QuestionTestActivity extends AppCompatActivity {
         InitFind();
         Bundle bundle = getIntent().getExtras();
         name = bundle.getString("nameGuide");
+        finalPoints = bundle.getString("finalPoints");
 
-        Log.d("aaaaaaa", name);
+        if (finalPoints == null){
+            finalPoints = " ";
+        }
+        Log.e("*********", String.valueOf(finalPoints));
 
         botaoBack.setOnClickListener(v -> {
+            timer.cancel();
             Toast.makeText(getApplicationContext(),
                     "Avaliação não concluída.\n Conclua essa etapa para prosseguir!",
                     Toast.LENGTH_LONG).show();
             Intent home = new Intent(getApplicationContext(), LoginActivity.class);
             startActivity(home);
-            timer.cancel();
+
         });
 
         //carregando dados
@@ -61,7 +66,7 @@ public class QuestionTestActivity extends AppCompatActivity {
         loadQuestions(counter);
 
         txvTimer.setText("2'");
-        timer = new CountDownTimer(2000 * 1000, 1000){
+        timer = new CountDownTimer(120 * 1000, 1000){
 
             @Override
             public void onTick(long millisUntilFinished) {
@@ -122,23 +127,31 @@ public class QuestionTestActivity extends AppCompatActivity {
     };
 
     public void validateLevel(){
-        if (pointcounter >= 0 && pointcounter <= 40) {
-            levelUp(name, "1");
-            Intent congratsA = new Intent(getApplicationContext(), LevelReportAActivity.class);
-            congratsA.putExtra("reportA", name);
-            startActivity(congratsA);
+        if (finalPoints.equals("300")) {
+            Intent performance = new Intent(getApplicationContext(),PerformanceActivity.class);
+            performance.putExtra("nameLogin", name);
+            startActivity(performance);
         }
-        else if (pointcounter > 40 && pointcounter <= 70){
-            levelUp(name, "2");
-            Intent congratsB = new Intent(getApplicationContext(), LevelReportBActivity.class);
-            congratsB.putExtra("reportB", name);
-            startActivity(congratsB);
-        }
-        else {
-            levelUp(name, "3");
-            Intent congratsC = new Intent(getApplicationContext(), LevelReportCActivity.class);
-            congratsC.putExtra("reportC", name);
-            startActivity(congratsC);
+        else
+        {
+            if (pointcounter >= 0 && pointcounter <= 40) {
+                levelUp(name, "1");
+                Intent congratsA = new Intent(getApplicationContext(), LevelReportAActivity.class);
+                congratsA.putExtra("reportA", name);
+                startActivity(congratsA);
+            }
+            else if (pointcounter > 40 && pointcounter <= 70){
+                levelUp(name, "2");
+                Intent congratsB = new Intent(getApplicationContext(), LevelReportBActivity.class);
+                congratsB.putExtra("reportB", name);
+                startActivity(congratsB);
+            }
+            else {
+                levelUp(name, "3");
+                Intent congratsC = new Intent(getApplicationContext(), LevelReportCActivity.class);
+                congratsC.putExtra("reportC", name);
+                startActivity(congratsC);
+            }
         }
     }
     public void levelUp(String name, String nivel){

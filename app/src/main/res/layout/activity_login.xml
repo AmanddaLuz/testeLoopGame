@@ -127,10 +127,10 @@
         android:layout_width="200dp"
         android:layout_height="30dp"
         android:layout_marginStart="8dp"
-        android:textColor="@color/black"
         android:background="@drawable/shape_border_input"
         android:hint="Digite sua senha"
-        android:inputType="textEmailAddress"
+        android:inputType="textVisiblePassword"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="@+id/avatarLock"
         app:layout_constraintStart_toEndOf="@+id/avatarLock"
         app:layout_constraintTop_toTopOf="@+id/avatarLock" />

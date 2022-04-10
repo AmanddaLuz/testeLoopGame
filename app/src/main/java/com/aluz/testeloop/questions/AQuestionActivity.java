@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -20,6 +21,7 @@ import com.aluz.testeloop.modle.User;
 import com.aluz.testeloop.testNivel.LevelReportAActivity;
 import com.aluz.testeloop.testNivel.LevelReportBActivity;
 import com.aluz.testeloop.testNivel.LevelReportCActivity;
+import com.aluz.testeloop.testNivel.UpLevelBActivity;
 
 public class AQuestionActivity extends AppCompatActivity {
 
@@ -29,20 +31,25 @@ public class AQuestionActivity extends AppCompatActivity {
     int counter, pointcounter;
     CountDownTimer timer;
     ArrayList<QuestionClassA> questionsList = new ArrayList<>();
-    String nameHome;
+    String nameHome, pointsHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aquestion);
         InitFind();
+
         Bundle bundle = getIntent().getExtras();
         nameHome = bundle.getString("nameHome");
+        pointsHome = bundle.getString("pointsHome");
+
+        point.setText("Pontos: " + pointsHome);
 
         botaoBack.setOnClickListener(v -> {
+            timer.cancel();
             Intent home = new Intent(getApplicationContext(), HomeActivity.class);
             startActivity(home);
-            timer.cancel();
+
         });
 
         //carregando dados
@@ -54,7 +61,7 @@ public class AQuestionActivity extends AppCompatActivity {
 
         //iniciar contador
         counter = 0;
-        pointcounter = 0;
+        pointcounter = Integer.parseInt(pointsHome);
         loadQuestions(counter);
 
         txvTimer.setText("30");
@@ -67,6 +74,12 @@ public class AQuestionActivity extends AppCompatActivity {
             @Override
             public void onFinish() {
                 Toast.makeText(AQuestionActivity.this, "Acabou o tempo!", Toast.LENGTH_SHORT).show();
+                if (counter < (questionsList.size() - 1)){
+                    counter++;
+                }else{
+                    counter = 0;
+                }
+                loadQuestions(counter);
             }
         };
         timer.start();
@@ -101,6 +114,7 @@ public class AQuestionActivity extends AppCompatActivity {
     void tryTeste (String response, String CorrectAlternative){
             if (response.equals(CorrectAlternative)) {
                 pointcounter = pointcounter + 10;
+                validatePoint();
                 point.setText("Pontos: " + pointcounter);
                 android.widget.Toast.makeText(AQuestionActivity.this, "Alternativa correta!",
                         Toast.LENGTH_SHORT).show();
@@ -109,44 +123,42 @@ public class AQuestionActivity extends AppCompatActivity {
                         Toast.LENGTH_SHORT).show();
             }
             if (counter < (questionsList.size() - 1)){
-                timer.cancel();
                 counter++;
-                loadQuestions(counter);
             }else{
-                Toast.makeText(AQuestionActivity.this, "Nível concluído", Toast.LENGTH_SHORT).show();
+                counter = 0;
+     //           Toast.makeText(AQuestionActivity.this, "Nível concluído", Toast.LENGTH_SHORT).show();
             }
+            timer.cancel();
+            loadQuestions(counter);
         };
+
     public void validatePoint(){
-        if (pointcounter >= 0 && pointcounter <= 40) {
-            pointUp(nameHome, "1");
-            Intent congratsA = new Intent(getApplicationContext(), LevelReportAActivity.class);
-            congratsA.putExtra("reportA", nameHome);
-            startActivity(congratsA);
-        }
-        else if (pointcounter > 40 && pointcounter <= 70){
-            pointUp(nameHome, "2");
-            Intent congratsB = new Intent(getApplicationContext(), LevelReportBActivity.class);
-            congratsB.putExtra("reportB", nameHome);
-            startActivity(congratsB);
-        }
-        else {
-            pointUp(nameHome, "3");
-            Intent congratsC = new Intent(getApplicationContext(), LevelReportCActivity.class);
-            congratsC.putExtra("reportC", nameHome);
-            startActivity(congratsC);
-        }
+        pointUp(nameHome, pointcounter);
+        if(pointcounter == 100){
+            levelUp(nameHome, "2");
+            Intent upTolevelB = new Intent(getApplicationContext(), UpLevelBActivity.class);
+            upTolevelB.putExtra("nameHome",nameHome);
+            upTolevelB.putExtra("pointsHome",String.valueOf(pointcounter));
+            startActivity(upTolevelB);}
     }
-    public void pointUp(String name, String nivel){
+    public void pointUp(String name, int point){
+        User player = new User();
+        player.setPontuacao(String.valueOf(point));
+        player.setLogin(name);
+        DataBaseSQLite db = new DataBaseSQLite(this);
+        db.atualizarPontos(player);
+        //Toast.makeText(this, "Falha ao atualizar!", Toast.LENGTH_LONG).show();
+
+    }
+    public void levelUp(String name, String nivel){
         User player = new User();
         player.setNivel(nivel);
         player.setLogin(name);
         DataBaseSQLite db = new DataBaseSQLite(this);
-        db.atualizarPontos(player);
+        db.atualizarNivel(player);
 
         //Toast.makeText(this, "Falha ao atualizar!", Toast.LENGTH_LONG).show();
-
     }
-
     public void InitFind(){
         botaoBack = findViewById(R.id.iButtonBack);
         txvQuestions = findViewById(R.id.tvQuestion);

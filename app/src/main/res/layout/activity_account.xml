@@ -31,7 +31,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edtTxtNameNewUser"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="54dp"
             android:textColor="@color/black"
             android:background="@drawable/shape_border_input"
             android:hint="Digite o nome de usuário"
@@ -107,10 +107,10 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edtTxtPasswordNewUser"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="54dp"
             android:background="@drawable/shape_border_input"
             android:hint="Digite sua senha"
-            android:inputType="textEmailAddress"
+            android:inputType="textVisiblePassword|textEmailAddress"
             android:textColor="@color/black" />
     </com.google.android.material.textfield.TextInputLayout>
 

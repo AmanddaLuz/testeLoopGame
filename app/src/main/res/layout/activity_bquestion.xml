@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue_500"
+    android:background="@color/cian"
     tools:context=".questions.BQuestionActivity">
 
     <View
@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="80dp"
         tools:layout_editor_absoluteY="1dp"
-        android:background="@color/blue_500"
+        android:background="@color/cian"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -45,7 +45,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_back"
-        android:background="@color/blue_500"
+        android:background="@color/cian"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/nivelB"
         android:layout_marginEnd="8dp"

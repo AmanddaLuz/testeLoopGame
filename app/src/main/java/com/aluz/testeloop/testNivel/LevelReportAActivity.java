@@ -30,8 +30,6 @@ public class LevelReportAActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent home = new Intent(getApplicationContext(), HomeActivity.class);
                 home.putExtra("nameLogin", nameLogin);
-
-                Log.d("***************" , nameLogin);
                 startActivity(home);
             }
         });

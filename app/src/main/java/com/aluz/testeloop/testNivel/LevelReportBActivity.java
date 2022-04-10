@@ -26,13 +26,10 @@ public class LevelReportBActivity extends AppCompatActivity {
         nameLogin = bundle.getString("reportB");
 
         backHomeB = findViewById(R.id.imgbBackHomeB);
-        backHomeB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent home = new Intent(getApplicationContext(), HomeActivity.class);
-                home.putExtra("nameLogin", nameLogin);
-                startActivity(home);
-            }
+        backHomeB.setOnClickListener(v -> {
+            Intent home = new Intent(getApplicationContext(), HomeActivity.class);
+            home.putExtra("nameLogin", nameLogin);
+            startActivity(home);
         });
     }
 }

@@ -49,14 +49,15 @@ public class CQuestionActivity extends AppCompatActivity {
             home.putExtra("nameLogin", nameHome);
             startActivity(home);
 
+
         });
 
         //carregando dados
-        questionsList.add(new QuestionClassA("  NÍVEL B - Escolha um nome", "Amanda","Bruno","Cátia","Danielle", "Ester", "Amanda"));
-        questionsList.add(new QuestionClassA("  NÍVEL B - Qual fruta abaixo é verde?", "Abacate","Banana","Caqui","damasco", "Escarola", "Abacate"));
-        questionsList.add(new QuestionClassA("  NÍVEL B - Quantos meses tem um ano?", "2 meses","6 meses","12 meses","24 meses", "36 meses", "12 meses"));
-        questionsList.add(new QuestionClassA("  NÍVEL B - Quantos dias tem um ano bissexto?", "265","366","367","368", "369", "366"));
-        questionsList.add(new QuestionClassA("  NÍVEL B - Qual a linguagem mais legal?", "Java",".Net","Kotlin","Cobol", "Python", "Python"));
+        questionsList.add(new QuestionClassA("Qual recurso a seguir, permite exibir uma mensagem na tela do usuário.?", "loge","logd","Intent intent = new Intent();","Toast", "public void", "Toast"));
+        questionsList.add(new QuestionClassA("Qual das alternativas a seguir\n permite ajustar o tamanho do text?", "\"android:textAllCaps=\"true\".","android:layout_height=\"wrap_content\".","android:layout_marginStart=\"10dp\".","android:text=\"Amanda\".","android:textSize=\"16dp\".","android:textSize=\"16dp\"."));
+        questionsList.add(new QuestionClassA("Qual alternativa define melhor o método findViewById? ", "Permite localizar um objeto através de um id.","Permite invocar um evento onclik.","Envia para tela o Text informado.","Declarar uma nova variável", "Converter um int em uma String.", "Permite localizar um objeto através de um id."));
+        questionsList.add(new QuestionClassA("Intent intent = new Intent refere-se a qual ação?", "Invocar uma nova Activity.","Setar um text na tela do usuário.","Abrir um contador de tempo.","Fazer um comentário.", "Declarar uma nova variável do tipo String.", "Invocar uma nova Activity."));
+        questionsList.add(new QuestionClassA("Qual dos métodos a seguir permite um evento click?", ".getText()",".setText()",".setOnClickListner",".setVisibility", ".getOnClickListner", ".setOnClickListner"));
 
         //iniciar contador
         counter = 0;
@@ -72,6 +73,7 @@ public class CQuestionActivity extends AppCompatActivity {
             }
             @Override
             public void onFinish() {
+                timer.cancel();
                 Toast.makeText(CQuestionActivity.this, "Acabou o tempo!", Toast.LENGTH_SHORT).show();
                 if (counter < (questionsList.size() - 1)){
                     counter++;
@@ -124,7 +126,8 @@ public class CQuestionActivity extends AppCompatActivity {
             counter++;
         }else{
             counter = 0;
-            //           Toast.makeText(AQuestionActivity.this, "Nível concluído", Toast.LENGTH_SHORT).show();
+            Toast.makeText(CQuestionActivity.this, "Nível concluído", Toast.LENGTH_SHORT).show();
+            timer.cancel();
         }
         timer.cancel();
         loadQuestions(counter);
@@ -133,6 +136,7 @@ public class CQuestionActivity extends AppCompatActivity {
     public void validatePoint(){
         pointUp(nameHome, pointcounter);
         if(pointcounter == 300){
+            timer.cancel();
             levelUp(nameHome, "3");
             Intent testeFinal = new Intent(getApplicationContext(), QuestionTestActivity.class);
             testeFinal.putExtra("nameGuide",nameHome);

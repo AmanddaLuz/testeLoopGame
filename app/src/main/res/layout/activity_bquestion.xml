@@ -148,7 +148,7 @@ Exemp Exemplo Exemplo Exemplo "
             android:layout_margin="16dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/alternativaB"/>
+            app:layout_constraintTop_toBottomOf="@id/btnAlternativeB"/>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnAlternativeD"
@@ -160,7 +160,7 @@ Exemp Exemplo Exemplo Exemplo "
             android:layout_margin="16dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/alternativaC"/>
+            app:layout_constraintTop_toBottomOf="@id/btnAlternativeC"/>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnAlternativeE"
@@ -172,7 +172,7 @@ Exemp Exemplo Exemplo Exemplo "
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/alternativaC" />
+            app:layout_constraintTop_toBottomOf="@id/btnAlternativeC" />
     </LinearLayout>
 
     <ImageView

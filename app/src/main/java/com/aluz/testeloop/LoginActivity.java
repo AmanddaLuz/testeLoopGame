@@ -29,6 +29,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         InitFind();
+        RememberPass();
 
         BotaoRegisterNewUser.setOnClickListener(view -> {
             Intent cadastro = new Intent(getApplicationContext(), AccountActivity.class);
@@ -72,7 +73,9 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
        });
-
+    }
+    // Lembrar senha
+    public void RememberPass(){
         InputUserPassword.setVisibility(View.VISIBLE);
         RememberPassword.setOnClickListener(view ->{
             if(RememberPassword.isChecked()){
@@ -81,6 +84,8 @@ public class LoginActivity extends AppCompatActivity {
                 InputUserPassword.setVisibility(View.INVISIBLE);
         });
     }
+
+    // Identificando as variáveis
     public void InitFind(){
         InputNameUserLogin = findViewById(R.id.edtTxtNameUser);
         InputUserPassword = findViewById(R.id.edtTxtPasswordUser);

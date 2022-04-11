@@ -77,7 +77,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tellInputLayout"
+        android:id="@+id/CEPInputLayout"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginTop="33dp"
@@ -96,13 +96,13 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/CEPInputLayout"
+        android:id="@+id/PasswordInputLayout"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginTop="33dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tellInputLayout">
+        app:layout_constraintTop_toBottomOf="@+id/CEPInputLayout">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edtTxtPasswordNewUser"
@@ -110,7 +110,7 @@
             android:layout_height="54dp"
             android:background="@drawable/shape_border_input"
             android:hint="Digite sua senha"
-            android:inputType="textVisiblePassword|textEmailAddress"
+            android:inputType="textPassword"
             android:textColor="@color/black" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -121,47 +121,39 @@
         android:layout_marginTop="33dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CEPInputLayout">
+        app:layout_constraintTop_toBottomOf="@+id/PasswordInputLayout">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtTxtConfirmPassword"
+            android:id="@+id/edtTxtConfirmNewPassword"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@drawable/shape_border_input"
             android:hint="Confirme sua senha"
-            android:inputType="textEmailAddress"
+            android:inputType="textPassword"
             android:textColor="@color/black" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/confirmPasswordInputLayout"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginTop="33dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordInputLayout">
-
-    </com.google.android.material.textfield.TextInputLayout>
-
     <ImageView
-        android:id="@+id/ivCancelRegister"
+        android:id="@+id/imgvCancelRegister"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="28dp"
         android:src="@drawable/ic_cancel"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/confirmPasswordInputLayout" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/ivConfirmRegister"
+        android:id="@+id/imgvConfirmRegister"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:layout_marginEnd="8dp"
         android:src="@drawable/ic_correct"
-        app:layout_constraintBottom_toBottomOf="@+id/ivCancelRegister"
-        app:layout_constraintEnd_toEndOf="@+id/confirmPasswordInputLayout"
-        app:layout_constraintTop_toTopOf="@+id/ivCancelRegister" />
+        app:layout_constraintBottom_toBottomOf="@+id/imgvCancelRegister"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.945"
+        app:layout_constraintStart_toEndOf="@+id/imgvCancelRegister"
+        app:layout_constraintTop_toTopOf="@+id/imgvCancelRegister"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

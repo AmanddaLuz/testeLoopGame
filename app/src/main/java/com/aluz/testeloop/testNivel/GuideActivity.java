@@ -18,15 +18,15 @@ public class GuideActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guide);
+
         Bundle bundle = getIntent().getExtras();
         name = bundle.getString("nameLogin");
 
-        BotaoProntoTest = findViewById(R.id.btnTest);
+        BotaoProntoTest = findViewById(R.id.btnStartTest);
         BotaoProntoTest.setOnClickListener(view -> {
             Intent intent = new Intent(getApplicationContext(), QuestionTestActivity.class);
             intent.putExtra("nameGuide", name);
             startActivity(intent);
-
         });
     }
 }

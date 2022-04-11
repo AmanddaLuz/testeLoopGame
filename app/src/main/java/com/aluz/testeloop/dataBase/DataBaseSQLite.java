@@ -179,7 +179,7 @@ public class DataBaseSQLite extends SQLiteOpenHelper {
         SQLiteDatabase DB = this.getWritableDatabase();
         Cursor cursor = DB.rawQuery("Select LOGIN, PONTUACAO from Dados_Usuario order by PONTUACAO DESC", null);
         if(cursor != null){
-            cursor.moveToNext();
+            cursor.moveToFirst();
             Ranking list = new Ranking(
                     cursor.getString(0),
                     cursor.getString(1));

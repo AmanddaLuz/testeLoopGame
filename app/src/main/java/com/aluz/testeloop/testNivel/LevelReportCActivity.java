@@ -25,7 +25,7 @@ public class LevelReportCActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         nameLogin = bundle.getString("reportC");
 
-        backHomeC = findViewById(R.id.imgbBackHomeC);
+        backHomeC = findViewById(R.id.imgButtonBackHomeC);
         backHomeC.setOnClickListener(v -> {
             Intent home = new Intent(getApplicationContext(), HomeActivity.class);
             home.putExtra("nameLogin", nameLogin);

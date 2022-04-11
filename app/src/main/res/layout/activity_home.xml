@@ -8,7 +8,7 @@
     tools:context=".HomeActivity">
 
     <ImageButton
-        android:id="@+id/imgButtonBack"
+        android:id="@+id/imgButtonLogout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_back"
@@ -46,6 +46,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:text="Amanda"
+        android:textAllCaps="true"
         app:layout_constraintBottom_toBottomOf="@id/ivAvatar"
         app:layout_constraintStart_toEndOf="@id/ivAvatar"
         app:layout_constraintTop_toTopOf="@id/ivAvatar" />
@@ -105,12 +106,14 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="250dp"
             android:layout_marginTop="24dp"
             android:background="@color/blue_700"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/RankingScroll">
+
+
 
 
             <TextView
@@ -128,12 +131,13 @@
 
             <TextView
                 android:id="@+id/txvNameFirstPlayer"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="48dp"
                 android:layout_marginEnd="150dp"
                 android:gravity="center_horizontal"
+                android:textAllCaps="true"
                 android:text="1º Jogador"
                 android:textSize="18dp"
                 app:layout_constraintEnd_toStartOf="@+id/txvPointsFirstPlayer"
@@ -143,10 +147,11 @@
 
             <TextView
                 android:id="@+id/txvPointsFirstPlayer"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="32dp"
                 android:gravity="center_horizontal"
+                android:layout_marginStart="300dp"
                 android:text="1000"
                 app:layout_constraintBottom_toBottomOf="@+id/txvNameFirstPlayer"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -157,11 +162,13 @@
 
             <TextView
                 android:id="@+id/txvNameThirdPlayer"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="40dp"
                 android:layout_marginEnd="150dp"
                 android:gravity="center_horizontal"
+                android:textAllCaps="true"
                 android:text="3º Jogador"
                 android:textSize="18dp"
                 app:layout_constraintEnd_toStartOf="@+id/txvPointsThirdPlayer"
@@ -173,10 +180,11 @@
 
             <TextView
                 android:id="@+id/txvPointsSecondPlayer"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="32dp"
                 android:gravity="center_horizontal"
+                android:layout_marginStart="300dp"
                 android:text="800"
                 app:layout_constraintBottom_toBottomOf="@+id/txvNameSecondPlayer"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -186,10 +194,11 @@
 
             <TextView
                 android:id="@+id/txvPointsThirdPlayer"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="32dp"
                 android:gravity="center_horizontal"
+                android:layout_marginStart="300dp"
                 android:text="500"
                 app:layout_constraintBottom_toBottomOf="@+id/txvNameThirdPlayer"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -200,11 +209,13 @@
 
             <TextView
                 android:id="@+id/txvNameSecondPlayer"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="40dp"
                 android:layout_marginEnd="150dp"
                 android:gravity="center_horizontal"
+                android:textAllCaps="true"
                 android:text="2º Jogador"
                 android:textSize="18dp"
                 app:layout_constraintEnd_toStartOf="@+id/txvPointsSecondPlayer"

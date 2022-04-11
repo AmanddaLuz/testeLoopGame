@@ -15,23 +15,20 @@ import com.aluz.testeloop.modle.User;
 public class AccountActivity extends AppCompatActivity {
 
     ImageView BotaoCancelNewAccount, BotaoCheckedNewAccount;
-    TextView InputNameNewUser, InputEmailNewUser, InputConfirmEmail, InputFoneNewUser, InputCEPNewUser, InputPasswordNewUser, InputConfirmPassword;
+    TextView InputNameNewUser, InputEmailNewUser, InputConfirmEmail,
+            InputCEPNewUser, InputPasswordNewUser, InputConfirmPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
-        BotaoCancelNewAccount = findViewById(R.id.ivCancelRegister);
-        BotaoCancelNewAccount.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        InitFind();
 
-                Intent cancelarCadastro = new Intent(getApplicationContext(), LoginActivity.class);
-                startActivity(cancelarCadastro);
-            }
+        BotaoCancelNewAccount.setOnClickListener(view -> {
+            Intent cancelarCadastro = new Intent(getApplicationContext(), LoginActivity.class);
+            startActivity(cancelarCadastro);
         });
 
-        BotaoCheckedNewAccount = findViewById(R.id.ivConfirmRegister);
         BotaoCheckedNewAccount.setOnClickListener(view -> {
                 if(InputNameNewUser.getText().toString().isEmpty() ||
                 InputPasswordNewUser.getText().toString().isEmpty()){
@@ -52,11 +49,16 @@ public class AccountActivity extends AppCompatActivity {
                 }
 
         });
+    }
+    //Identificando as variáveis
+    public void InitFind(){
         InputNameNewUser = findViewById(R.id.edtTxtNameNewUser);
         InputEmailNewUser = findViewById(R.id.edtTxtEmailNewUser);
         InputConfirmEmail = findViewById(R.id.edtTxtConfirmNewEmail);
         InputCEPNewUser = findViewById(R.id.edtTxtCEPNewUser);
         InputPasswordNewUser = findViewById(R.id.edtTxtPasswordNewUser);
-        InputConfirmPassword = findViewById(R.id.edtTxtConfirmPassword);
+        InputConfirmPassword = findViewById(R.id.edtTxtConfirmNewPassword);
+        BotaoCancelNewAccount = findViewById(R.id.imgvCancelRegister);
+        BotaoCheckedNewAccount = findViewById(R.id.imgvConfirmRegister);
     }
 }

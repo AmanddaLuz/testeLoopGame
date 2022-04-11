@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -34,31 +35,35 @@ public class QuestionTestActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question_test);
         InitFind();
+
+        //Resgatando o nome do jogador logado
         Bundle bundle = getIntent().getExtras();
         name = bundle.getString("nameGuide");
         finalPoints = bundle.getString("finalPoints");
-
         if (finalPoints == null){
             finalPoints = " ";
         }
-        Log.e("*********", String.valueOf(finalPoints));
+//        Log.e("*********", String.valueOf(finalPoints));
+        finalizar.setOnClickListener(v -> {
+            timer.cancel();
+            validateLevel();
+        });
 
         botaoBack.setOnClickListener(v -> {
-            timer.cancel();
             Toast.makeText(getApplicationContext(),
                     "Avaliação não concluída.\n Conclua essa etapa para prosseguir!",
                     Toast.LENGTH_LONG).show();
+            timer.cancel();
             Intent home = new Intent(getApplicationContext(), LoginActivity.class);
             startActivity(home);
-
         });
 
         //carregando dados
-        questionsList.add(new QuestionClassA("TESTE - Escolha um nome", "Amanda","Bruno","Cátia","Danielle", "Ester", "Amanda"));
-        questionsList.add(new QuestionClassA("TESTE - Qual fruta abaixo é verde?", "Abacate","Banana","Caqui","damasco", "Escarola", "Abacate"));
-        questionsList.add(new QuestionClassA("TESTE - Quantos meses tem um ano?", "2 meses","6 meses","12 meses","24 meses", "36 meses", "12 meses"));
-        questionsList.add(new QuestionClassA("TESTE - Quantos dias tem um ano bissexto?", "265","366","367","368", "369", "366"));
-        questionsList.add(new QuestionClassA("TESTE - Qual a linguagem mais legal?", "Java",".Net","Kotlin","Cobol", "Python", "Python"));
+        questionsList.add(new QuestionClassA("TESTE - SOBRE O GITHUB - \n A que se refere o comando git commit -m?", "Limpar o terminal.","visualizar os logs dos arquivos gravados no repositório.","Refere-se ao termo \"mensseger\". Mensagem que será gravada no commit","Arquivo para ser criado no git e evitar que determinados arquivos sejam adicionados.", "Resumo dos commits feitos no projeto.", "Refere-se ao termo \"mensseger\". Mensagem que será gravada no commit"));
+        questionsList.add(new QuestionClassA("TESTE - SOBRE O GITHUB - \n A que se refere o comando git branch?", "Comando para listar as branchs existentes.","Limpar o terminal.","Iniciar o git no terminal.","Enviar o diretório local para o central. ", "Consultar o status dos commits.", "Comando para listar as branchs existentes."));
+        questionsList.add(new QuestionClassA("TESTE - SOBRE O GITHUB - \n O comando git add . refere-se a que?", "Visualizar os commits prontos par o git push.","Peparar um arquivo específico para ser commitado.","Limpar o terminal.","Encontrar a pessoa responsável pelo último commit.", "Adicionar todos os arquivos para serem commitados.", "Adicionar todos os arquivos para serem commitados."));
+        questionsList.add(new QuestionClassA("TESTE - SOBRE O GITHUB - \n O comando git push refere-se a que?", "Adicionar os arquivos para serem commitados.","Enviar as alterações do repositório local para o repositório remoto.","Verificar o status dos commits.","Limpar o terminal.", "Mesclar as alterações em sua branch à branch master", "Enviar as alterações do repositório local para o repositório remoto."));
+        questionsList.add(new QuestionClassA("TESTE - SOBRE O GITHUB - \n A que se refere o comando git pull?", "Atualiza o repositório local com a versão do repositório remoto! ",".Net","Kotlin","Limpar o terminal.", "Iniciar o git no terminal.", "Atualiza o repositório local com a versão do repositório remoto! "));
 
         //iniciar contador
         counter = 0;
@@ -66,7 +71,7 @@ public class QuestionTestActivity extends AppCompatActivity {
         loadQuestions(counter);
 
         txvTimer.setText("2'");
-        timer = new CountDownTimer(120 * 1000, 1000){
+        timer = new CountDownTimer(300 * 1000, 1000){
 
             @Override
             public void onTick(long millisUntilFinished) {
@@ -75,6 +80,7 @@ public class QuestionTestActivity extends AppCompatActivity {
             @Override
             public void onFinish() {
                 Toast.makeText(QuestionTestActivity.this, "Acabou o tempo!", Toast.LENGTH_SHORT).show();
+                timer.cancel();
                 validateLevel();
             }
         };
@@ -123,11 +129,14 @@ public class QuestionTestActivity extends AppCompatActivity {
             Toast.makeText(QuestionTestActivity.this, "Nível concluído!", Toast.LENGTH_SHORT).show();
             validateLevel();
         }
-        finalizar.setOnClickListener(v -> validateLevel());
+
     };
 
+    //função que valida para qual nível o jogador será direcionado
     public void validateLevel(){
+        Log.e("*************", String.valueOf(pointcounter));
         if (finalPoints.equals("300")) {
+            timer.cancel();
             Intent performance = new Intent(getApplicationContext(),PerformanceActivity.class);
             performance.putExtra("nameLogin", name);
             startActivity(performance);
@@ -135,18 +144,21 @@ public class QuestionTestActivity extends AppCompatActivity {
         else
         {
             if (pointcounter >= 0 && pointcounter <= 40) {
+                timer.cancel();
                 levelUp(name, "1");
                 Intent congratsA = new Intent(getApplicationContext(), LevelReportAActivity.class);
                 congratsA.putExtra("reportA", name);
                 startActivity(congratsA);
             }
             else if (pointcounter > 40 && pointcounter <= 70){
+                timer.cancel();
                 levelUp(name, "2");
                 Intent congratsB = new Intent(getApplicationContext(), LevelReportBActivity.class);
                 congratsB.putExtra("reportB", name);
                 startActivity(congratsB);
             }
             else {
+                timer.cancel();
                 levelUp(name, "3");
                 Intent congratsC = new Intent(getApplicationContext(), LevelReportCActivity.class);
                 congratsC.putExtra("reportC", name);
@@ -154,22 +166,25 @@ public class QuestionTestActivity extends AppCompatActivity {
             }
         }
     }
+
+    //função que atualiza o nível do jogador no banco de dados
     public void levelUp(String name, String nivel){
         User player = new User();
         player.setNivel(nivel);
         player.setLogin(name);
         DataBaseSQLite db = new DataBaseSQLite(this);
         db.atualizarNivel(player);
-
         //Toast.makeText(this, "Falha ao atualizar!", Toast.LENGTH_LONG).show();
 
     }
+
+    //Identificando as variáveis
     public void InitFind(){
-        botaoBack = findViewById(R.id.iButtonBack);
+        botaoBack = findViewById(R.id.imgButtonBackLogin);
         txvQuestions = findViewById(R.id.txvQuestionTestLevel);
         txvQuestionsCount = findViewById(R.id.txvNumberQuestionTestLevel);
         txvTimer = findViewById(R.id.txvTimerTestLevel);
-        point = findViewById(R.id.txvPontuacaoLevel);
+        point = findViewById(R.id.txvPontuacaoTestLevel);
         alternativeA = findViewById(R.id.btnAlternativeA);
         alternativeB = findViewById(R.id.btnAlternativeB);
         alternativeC = findViewById(R.id.btnAlternativeC);
@@ -177,8 +192,4 @@ public class QuestionTestActivity extends AppCompatActivity {
         alternativeE = findViewById(R.id.btnAlternativeE);
         finalizar = findViewById(R.id.btnStopTest);
     }
-
-
-
-
 }

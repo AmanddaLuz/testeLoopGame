@@ -39,6 +39,7 @@ public class UpLevelBActivity extends AppCompatActivity {
         backHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent home = new Intent(getApplicationContext(), HomeActivity.class);
                 home.putExtra("nameLogin", nameHome);
                 startActivity(home);
@@ -46,7 +47,7 @@ public class UpLevelBActivity extends AppCompatActivity {
         });
     }
     public void InitFind() {
-        backHome = findViewById(R.id.ivArrowBackHomeB);
+        backHome = findViewById(R.id.imgvArrowBackHomeB);
 //        startQuestionsLevelB = findViewById(R.id.btnContinueQuestionsLevelB);
 }
 }

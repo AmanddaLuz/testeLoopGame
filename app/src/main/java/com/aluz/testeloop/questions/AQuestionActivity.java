@@ -39,6 +39,7 @@ public class AQuestionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_aquestion);
         InitFind();
 
+        //Resgatando o nome do jogador logado
         Bundle bundle = getIntent().getExtras();
         nameHome = bundle.getString("nameHome");
         pointsHome = bundle.getString("pointsHome");
@@ -48,16 +49,18 @@ public class AQuestionActivity extends AppCompatActivity {
         botaoBack.setOnClickListener(v -> {
             timer.cancel();
             Intent home = new Intent(getApplicationContext(), HomeActivity.class);
+            home.putExtra("nameHome", nameHome);
             startActivity(home);
+
 
         });
 
         //carregando dados
-        questionsList.add(new QuestionClassA("Escolha um nome", "Amanda","Bruno","Cátia","Danielle", "Ester", "Amanda"));
-        questionsList.add(new QuestionClassA("Qual fruta abaixo é verde?", "Abacate","Banana","Caqui","damasco", "Escarola", "Abacate"));
-        questionsList.add(new QuestionClassA("Quantos meses tem um ano?", "2 meses","6 meses","12 meses","24 meses", "36 meses", "12 meses"));
-        questionsList.add(new QuestionClassA("Quantos dias tem um ano bissexto?", "265","366","367","368", "369", "366"));
-        questionsList.add(new QuestionClassA("Qual a linguagem mais legal?", "Java",".Net","Kotlin","Cobol", "Python", "Python"));
+        questionsList.add(new QuestionClassA("Qual alternativa define melhor o método findViewById? ", "Permite localizar um objeto através de um id.","Permite invocar um evento onclik.","Envia para tela o Text informado.","Declarar uma nova variável", "Converter um int em uma String.", "Permite localizar um objeto através de um id."));
+        questionsList.add(new QuestionClassA("Qual das alternativas a seguir\n permite ajustar o tamanho do text?", "\"android:textAllCaps=\"true\".","android:layout_height=\"wrap_content\".","android:layout_marginStart=\"10dp\".","android:text=\"Amanda\".","android:textSize=\"16dp\".","android:textSize=\"16dp\"."));
+        questionsList.add(new QuestionClassA("Qual dos métodos a seguir permite um evento click?", ".getText()",".setText()",".setOnClickListner",".setVisibility", ".getOnClickListner", ".setOnClickListner"));
+        questionsList.add(new QuestionClassA("Qual recurso a seguir, permite exibir uma mensagem na tela do usuário.?", "loge","logd","Intent intent = new Intent();","Toast", "public void", "Toast"));
+        questionsList.add(new QuestionClassA("Intent intent = new Intent refere-se a qual ação?", "Invocar uma nova Activity.","Setar um text na tela do usuário.","Abrir um contador de tempo.","Fazer um comentário.", "Declarar uma nova variável do tipo String.", "Invocar uma nova Activity."));
 
         //iniciar contador
         counter = 0;
@@ -81,6 +84,7 @@ public class AQuestionActivity extends AppCompatActivity {
                 }
                 loadQuestions(counter);
             }
+
         };
         timer.start();
     }
@@ -135,6 +139,7 @@ public class AQuestionActivity extends AppCompatActivity {
     public void validatePoint(){
         pointUp(nameHome, pointcounter);
         if(pointcounter == 100){
+            timer.cancel();
             levelUp(nameHome, "2");
             Intent upTolevelB = new Intent(getApplicationContext(), UpLevelBActivity.class);
             upTolevelB.putExtra("nameHome",nameHome);

@@ -11,13 +11,17 @@ import android.widget.ImageView;
 public class ConfirmLogoutActivity extends AppCompatActivity {
 
     ImageView ConfirmLogout, CancelLogout;
+    String nameHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirm_logout);
-        ConfirmLogout = findViewById(R.id.ivConfirmLogout);
-        CancelLogout = findViewById(R.id.ivCancelLogout);
+        Bundle bundle = getIntent().getExtras();
+        nameHome= bundle.getString("nameHome");
+
+        ConfirmLogout = findViewById(R.id.imgvConfirmLogout);
+        CancelLogout = findViewById(R.id.imgvCancelLogout);
 
         ConfirmLogout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,6 +34,7 @@ public class ConfirmLogoutActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent backHome = new Intent(getApplicationContext(), HomeActivity.class);
+                backHome.putExtra("nameHome", nameHome );
                 startActivity(backHome);
             }
         });

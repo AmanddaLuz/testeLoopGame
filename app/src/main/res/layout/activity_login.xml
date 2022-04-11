@@ -89,9 +89,9 @@
 
     <CheckBox
         android:id="@+id/checkRememberPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="35dp"
+        android:layout_width="315dp"
+        android:layout_height="40dp"
+        android:gravity="center"
         android:text="Lembrar minha senha"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.613"
@@ -100,13 +100,14 @@
 
     <TextView
         android:id="@+id/tvForgotPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="285dp"
+        android:layout_height="24dp"
         android:layout_margin="8dp"
         android:layout_marginTop="8dp"
+        android:gravity="center_horizontal"
         android:text="Esqueci minha senha"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.448"
+        app:layout_constraintHorizontal_bias="0.706"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/checkRememberPassword" />
 
@@ -115,7 +116,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="116dp"
-        android:backgroundTint="@android:color/transparent"
+        android:backgroundTint="@android:color/holo_orange_dark"
         android:text="Cadastrar - se"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -129,7 +130,7 @@
         android:layout_marginStart="8dp"
         android:background="@drawable/shape_border_input"
         android:hint="Digite sua senha"
-        android:inputType="textVisiblePassword"
+        android:inputType="textPassword"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="@+id/avatarLock"
         app:layout_constraintStart_toEndOf="@+id/avatarLock"

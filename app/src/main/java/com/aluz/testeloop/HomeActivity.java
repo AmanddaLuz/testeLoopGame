@@ -55,6 +55,7 @@ public class HomeActivity extends AppCompatActivity {
         //mandando o nome do usuário pra próxima intent
         Bundle bundle = getIntent().getExtras();
         nameLogin = bundle.getString("nameLogin");
+        Log.e("**************", nameLogin);
 
         //Instanciando o banco de dados
 
@@ -96,9 +97,11 @@ public class HomeActivity extends AppCompatActivity {
 
 
         BotaoLogoutGame.setOnClickListener(v -> {
-            Intent logout = new Intent(getApplicationContext(), ConfirmLogoutActivity.class);
-            startActivity(logout);
             timer.cancel();
+            Intent logout = new Intent(getApplicationContext(), ConfirmLogoutActivity.class);
+            logout.putExtra("nameHome", nameLogin);
+            startActivity(logout);
+
         });
 
 // Programando o tempo e as dicas na tela.
@@ -140,7 +143,7 @@ public class HomeActivity extends AppCompatActivity {
         hintsHome = findViewById(R.id.txvHintsHome);
         txvtime = findViewById(R.id.txvtime);
         BotaoJogar = findViewById(R.id.btnStartPlay);
-        BotaoLogoutGame = findViewById(R.id.imgButtonBack);
-    }
-    }
+        BotaoLogoutGame = findViewById(R.id.imgButtonLogout);
 
+    }
+}

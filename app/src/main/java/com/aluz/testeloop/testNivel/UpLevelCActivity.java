@@ -21,7 +21,7 @@ public class UpLevelCActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         nameHome = bundle.getString("nameHome");
         pointsHome = bundle.getString("pointsHome");
-        backHome=findViewById(R.id.imgvbackC);
+        backHome=findViewById(R.id.imgvArrowBackHomeC);
         backHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

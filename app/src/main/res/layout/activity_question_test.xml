@@ -32,7 +32,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-            android:id="@+id/iButtonBack"
+            android:id="@+id/imgButtonBackLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_back"
@@ -43,7 +43,7 @@
             app:layout_constraintBottom_toBottomOf="@id/nivel"/>
 
         <TextView
-            android:id="@+id/txvPontuacaoLevel"
+            android:id="@+id/txvPontuacaoTestLevel"
             android:layout_width="108dp"
             android:layout_height="wrap_content"
             android:text="Pontos: 0"
@@ -51,9 +51,9 @@
             android:textColor="@color/black"
             android:background="@drawable/shape_btn_alternatives"
             android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toStartOf="@id/iButtonBack"
-            app:layout_constraintTop_toTopOf="@id/iButtonBack"
-            app:layout_constraintBottom_toBottomOf="@id/iButtonBack"/>
+            app:layout_constraintEnd_toStartOf="@id/imgButtonBackLogin"
+            app:layout_constraintTop_toTopOf="@id/imgButtonBackLogin"
+            app:layout_constraintBottom_toBottomOf="@id/imgButtonBackLogin"/>
 
         <LinearLayout
             android:id="@+id/question"
@@ -140,7 +140,7 @@ Exemp Exemplo Exemplo Exemplo "
                 android:layout_margin="16dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/alternativaB"/>
+                app:layout_constraintTop_toBottomOf="@id/btnAlternativeB"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnAlternativeD"
@@ -152,7 +152,7 @@ Exemp Exemplo Exemplo Exemplo "
                 android:layout_margin="16dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/alternativaC"/>
+                app:layout_constraintTop_toBottomOf="@id/btnAlternativeC"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnAlternativeE"
@@ -164,7 +164,7 @@ Exemp Exemplo Exemplo Exemplo "
                 android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/alternativaC" />
+                app:layout_constraintTop_toBottomOf="@id/btnAlternativeC" />
         </LinearLayout>
 
         <ImageView

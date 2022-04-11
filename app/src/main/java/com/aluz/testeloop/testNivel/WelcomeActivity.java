@@ -17,7 +17,7 @@ import com.aluz.testeloop.testNivel.QuestionTestActivity;
 
 public class WelcomeActivity extends AppCompatActivity {
 
-    AppCompatButton BotaoStartTestLevel;
+    AppCompatButton BotaoWelcomeTestLevel;
     TextView Welcome;
     String nameWelcome;
 
@@ -26,18 +26,20 @@ public class WelcomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
         InitFind();
+
+        //setando o nome do jogador logado
         Bundle bundle = getIntent().getExtras();
         nameWelcome = bundle.getString("nameWelcome");
         Welcome.setText(nameWelcome);
 
-        BotaoStartTestLevel.setOnClickListener(view -> {
+        BotaoWelcomeTestLevel.setOnClickListener(view -> {
             Intent retornar = new Intent(getApplicationContext(), GuideActivity.class);
             retornar.putExtra("nameLogin", nameWelcome);
             startActivity(retornar);
         });
     }
     public void InitFind(){
-        BotaoStartTestLevel = findViewById(R.id.btnStartTestLevel);
+        BotaoWelcomeTestLevel = findViewById(R.id.btnWelcomeTestLevel);
         Welcome = findViewById(R.id.txvNameWelcome);
     }
 }

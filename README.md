@@ -18,7 +18,8 @@ O app foi desenvolvido individualmente, onde implementei:
 - O fluxo de login
 - O fluxo de texte de nível com persistência no banco de dados para direcionar o jogador para o nível correto.
 - Na home as dicas atualizam a cada 5 segundos.
-- E o Ranking atualiza conforme os jogadores vão pontuando.
+- Persistência no banco de dados.
+- O Ranking atualiza conforme os jogadores vão pontuando.
 - O usuário logado, aparece com nome e pontuação na Home.
 - APRESENTAÇÃO - https://www.canva.com/design/DAE7O9GtSSw/neckYUUoPxlBBvL2_UnwTg/edit
 
